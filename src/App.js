@@ -1,9 +1,13 @@
+import { Routes, Route } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
   return (
-    <div className="App">
-      <h2>Capstone project</h2>
-    </div>
+    <Routes>
+      {routes.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element} exact={route.exact} />
+      ))}
+    </Routes>  
   );
 }
 
