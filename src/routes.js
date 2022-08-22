@@ -1,12 +1,12 @@
-import Homepage from "./pages/Homepage";
+import Homepage from './pages/Homepage';
 
 const routes = [
   {
-    path: "/",
-    title: "Homepage",
+    path: '/',
+    title: 'Homepage',
     exact: true,
-    element: <Homepage />
-  }
-]
+    element: <Homepage />,
+  },
+];
 
 export default routes;
