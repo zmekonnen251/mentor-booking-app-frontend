@@ -7,7 +7,7 @@ $bp-sm: 320px;
 
 @mixin breakpoint($point) {
   @if $point == sm {
-    @media (min-width: $bp-sm) {
+    @media (max-width: $bp-lg) {
       @content;
     }
   }

@@ -1,0 +1,21 @@
+@import '../styles/variables.scss';
+
+.homepage {
+  height: 100vh;
+  width: 100%;
+  background-image: url('../assets/images/bgg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__overlay {
+    background-color: rgb(151,191,15, 0.78);
+    width: inherit;
+    height: inherit;    
+  }
+
+  @include breakpoint(sm) {
+    background-position: 25%;
+  }
+
+}
