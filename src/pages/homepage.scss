@@ -69,6 +69,18 @@
           text-align: center;
         }  
       }
+
+      &__buttons {
+        padding: 20px;
+
+        .reserve {
+          padding: 8px 12px;
+          border-radius: 10px;
+          background: white;
+          color: $primary;
+          font-size: 1.2rem;
+        }
+      }
     }
 
   }

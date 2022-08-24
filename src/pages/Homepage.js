@@ -28,6 +28,9 @@ export default function Homepage() {
                 using Content here, content here, making it look like readable English
               </p>
             </div>
+            <div className="homepage__overlay__text__buttons">
+              <button className="button reserve" type="button">Reserve</button>
+            </div>
           </div>
         </div>
       </div>
