@@ -1,0 +1,14 @@
+.homepage_container {
+  display: flex;
+  height: 100%;
+}
+
+.navbar {
+  flex-basis: 25vw;
+  border: 2px solid red;
+}
+
+.content {
+  flex-grow: 1;
+  border: 2px solid green;
+}
