@@ -12,6 +12,23 @@ export default function Homepage() {
             <button className="button menu" type="button"><img src={menuIcon} alt="hamburger menu" /></button>
             <button className="button search" type="button"><img src={searchIcon} alt="search" /></button>
           </header>
+
+          <div className="homepage__overlay__text">
+            <div className="homepage__overlay__text__header">
+              <h1>Book a session with a Mentor</h1>
+            </div>
+            <div className="homepage__overlay__text__body">
+              <p>
+                It is a long established a reader will be distracted by the readable
+                content of a page when looking at its layout.
+                <br />
+                The point of using Lorem is it has a more-or-less normal
+                distribution of letters as opposed to
+                <br />
+                using Content here, content here, making it look like readable English
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
