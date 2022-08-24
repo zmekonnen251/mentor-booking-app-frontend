@@ -10,11 +10,26 @@
 }
 
 .content {
+  display: relative;
   flex-grow: 1;
+}
+
+.menubtn {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
   .navbar {
     display: none;
   }
+
+  .menubtn {
+    display: block;
+    background-color: transparent;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
 }
