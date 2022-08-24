@@ -3,8 +3,8 @@
 .homepage {
   height: 100vh;
   width: 100%;
-  background-image: url('../assets/images/bgg.jpg');
-  background-position: center;
+  background-image: url('../assets/images/bg.jpg');
+  background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -12,10 +12,37 @@
     background-color: rgb(151,191,15, 0.78);
     width: inherit;
     height: inherit;    
+    padding: $global-padding;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+
+      .menu {
+        background: none;
+      }
+
+      .search {
+        background: white;
+        width: 40px;
+        height: 30px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        img {
+          height: 1rem;
+          opacity: 0.6;
+        }
+      }
+    }
+
   }
 
   @include breakpoint(sm) {
-    background-position: 25%;
+    background-position: right 20% bottom 40%; 
   }
 
 }
