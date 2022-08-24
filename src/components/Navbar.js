@@ -1,5 +1,13 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import {
+  FaFacebookF,
+  FaGooglePlusG,
+  FaInstagram,
+  FaLinkedinIn,
+  FaRegCopyright,
+  FaTwitter,
+} from 'react-icons/fa';
 import style from './Navbar.module.css';
 
 export default function Navbar() {
@@ -12,8 +20,19 @@ export default function Navbar() {
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/details">Details</NavLink>
       </div>
+
       <div className={style.footer}>
-        <li>facebook</li>
+        <ul className={style.social}>
+          <Link to="facebook"><FaFacebookF /></Link>
+          <Link to="twitter"><FaTwitter /></Link>
+          <Link to="googleplus"><FaGooglePlusG /></Link>
+          <Link to="instagram"><FaInstagram /></Link>
+          <Link to="linkedin"><FaLinkedinIn /></Link>
+        </ul>
+        <p>
+          <FaRegCopyright />
+          2015 Microverse
+        </p>
       </div>
     </nav>
   );
