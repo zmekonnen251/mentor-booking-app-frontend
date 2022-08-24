@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import style from './Homepage.module.css';
 
 export default function Homepage() {
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(true);
 
   const clickHandler = () => {
     setMenu(!menu);
@@ -12,13 +12,14 @@ export default function Homepage() {
 
   return (
     <div className={style.homepage_container}>
+
       <div className={style.navbar}>
         <Navbar />
-      </div>
-      <div className={style.content}>
-        <button type="button" className={style.menubtn} onClick={() => { clickHandler(); }} aria-label="Hamburger menu">
+        <button type="button" className={style.menutoggle} aria-label="Menu toggle" onClick={() => { clickHandler(); }}>
           <FaBars />
         </button>
+      </div>
+      <div className={style.content}>
         <h2>Hello</h2>
       </div>
     </div>

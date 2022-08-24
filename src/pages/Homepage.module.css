@@ -4,18 +4,34 @@
 }
 
 .navbar {
-  display: block;
+  position: relative;
   height: 100vh;
-  flex-basis: 230px;
+  flex-basis: 270px;
 }
 
 .content {
-  display: relative;
+  position: relative;
   flex-grow: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.menubtn {
-  display: none;
+.menutoggle {
+  position: absolute;
+  top: 2rem;
+  right: 0px;
+  width: 40px;
+  background-color: var(--primary);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

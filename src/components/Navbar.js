@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className={style.nav}>
       <Link to="/" className={style.logo}>BookAMentor</Link>
       <div className={style.menu}>
-        <NavLink to="/" activeClassName={style.activelink}>Home</NavLink>
+        <NavLink to="/" activeclassname={style.activelink}>Home</NavLink>
         <NavLink to="/home">Reserve</NavLink>
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/details">Details</NavLink>
