@@ -4,8 +4,8 @@
   height: 100vh;
   justify-content: space-between;
   border-right: 1.8px solid #eee;
-  margin-right: 40px;
   padding: 20px 0;
+  width: 270px;
 }
 
 .logo {

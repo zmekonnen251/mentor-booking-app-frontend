@@ -14,12 +14,13 @@ export default function Homepage() {
     <div className={style.homepage_container}>
 
       <div className={style.navbar}>
-        <Navbar />
+        { menu && <Navbar /> }
+      </div>
+      <div className={style.content}>
         <button type="button" className={style.menutoggle} aria-label="Menu toggle" onClick={() => { clickHandler(); }}>
           <FaBars />
         </button>
-      </div>
-      <div className={style.content}>
+
         <h2>Hello</h2>
       </div>
     </div>

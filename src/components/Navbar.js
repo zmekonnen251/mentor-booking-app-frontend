@@ -23,11 +23,11 @@ export default function Navbar() {
 
       <div className={style.footer}>
         <ul className={style.social}>
-          <Link to="facebook"><FaFacebookF /></Link>
-          <Link to="twitter"><FaTwitter /></Link>
-          <Link to="googleplus"><FaGooglePlusG /></Link>
-          <Link to="instagram"><FaInstagram /></Link>
-          <Link to="linkedin"><FaLinkedinIn /></Link>
+          <a href="facebook" target="_blank" aria-label="facebook"><FaFacebookF /></a>
+          <a href="twitter" target="_blank" aria-label="twitter"><FaTwitter /></a>
+          <a href="googleplus" target="_blank" aria-label="google"><FaGooglePlusG /></a>
+          <a href="instagram" target="_blank" aria-label="instagram"><FaInstagram /></a>
+          <a href="linkedin" target="_blank" aria-label="linkedin"><FaLinkedinIn /></a>
         </ul>
         <p>
           <FaRegCopyright />
