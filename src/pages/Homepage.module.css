@@ -4,11 +4,10 @@
 }
 
 .navbar {
-  flex-basis: 25vw;
-  border: 2px solid red;
+  height: 100vh;
+  flex-basis: 18vw;
 }
 
 .content {
   flex-grow: 1;
-  border: 2px solid green;
 }

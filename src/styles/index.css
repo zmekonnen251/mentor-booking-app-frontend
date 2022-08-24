@@ -19,6 +19,16 @@ button {
   cursor: pointer;
 }  
 
-h1, h2, h3 {
+h1, h2, h3, a {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  background-color: var(--primary);
+  color: white;
 }
