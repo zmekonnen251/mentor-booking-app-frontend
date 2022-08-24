@@ -4,10 +4,17 @@
 }
 
 .navbar {
+  display: block;
   height: 100vh;
   flex-basis: 230px;
 }
 
 .content {
   flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
 }
