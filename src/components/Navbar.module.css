@@ -37,8 +37,8 @@
 .footer p {
   display: flex;
   align-items: center;
-  gap: .5ch;
-  font-size: .8rem;
+  gap: 0.5ch;
+  font-size: 0.8rem;
 }
 
 .social {

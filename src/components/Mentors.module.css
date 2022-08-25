@@ -18,13 +18,15 @@
 .avatar {
   height: 30%;
   border-radius: 20%;
-  box-shadow:  5px 5px 5px #bebebe,
-             -5px -5px 5px #ffffff;
+  box-shadow:
+    5px 5px 5px #bebebe,
+    -5px -5px 5px #fff;
 }
 
 .avatar:hover {
-  box-shadow:  10px 10px 20px #bebebe,
-             -10px -10px 20px #ffffff;
+  box-shadow:
+    10px 10px 20px #bebebe,
+    -10px -10px 20px #fff;
 }
 
 .mentor h2 {

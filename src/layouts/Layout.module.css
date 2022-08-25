@@ -17,7 +17,7 @@
 .menutoggle {
   position: absolute;
   top: 2rem;
-  left: 0px;
+  left: 0;
   width: 40px;
   background-color: var(--primary);
   border-top-right-radius: 5px;
@@ -47,12 +47,11 @@
     padding-top: 30vh;
     flex-grow: 1;
     height: 100%;
-  }  
+  }
 
   .menutoggle {
     left: auto;
     right: 2rem;
     border-radius: 5px;
   }
-  
 }
