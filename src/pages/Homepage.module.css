@@ -16,35 +16,3 @@
   text-transform: uppercase;
   letter-spacing: 0.5ch;
 }
-
-.mentors {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 30px;
-  overflow-x: auto;
-  height: 55vh;
-  position: relative;
-}
-
-.mentor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nextbtn {
-  position: absolute;
-  right: 0;
-  height: 40px;
-  width: 50px;
-  background-color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
