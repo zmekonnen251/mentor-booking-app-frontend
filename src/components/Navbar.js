@@ -6,10 +6,13 @@ import '../styles/navbar.scss';
 export default function Navbar() {
 	const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
-	console.log(user.jwt);
-	console.log(decode(user.jwt));
+	// console.log(user.jwt);
+	// console.log(decode(user.jwt));
 
-	const logOut = () => {};
+	const logOut = () => {
+		const profile = localStorage.getItem('profile');
+		console.log(profile);
+	};
 	const signUp = () => {};
 	const signIn = () => {};
 
