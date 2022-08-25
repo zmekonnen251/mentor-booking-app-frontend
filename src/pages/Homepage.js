@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Mentors from '../components/Mentors';
 import style from './Homepage.module.css';
 
 export default function Homepage() {
-  const URL = 'https://random-data-api.com/api/v2/users?size=3';
+  const URL = 'https://random-data-api.com/api/v2/users?size=10';
   const [mentors, setMentors] = useState(null);
 
   useEffect(() => {
@@ -22,16 +23,7 @@ export default function Homepage() {
         </h1>
         <p>Please select a mentor</p>
       </div>
-      <ul className={style.mentors}>
-        {
-          mentors ? mentors.map((mentor) => (
-            <li key={mentor.id} className={style.mentor}>
-              <img src={mentor.avatar} alt={mentor.first_name} />
-              <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
-            </li>
-          )) : <h2>Loading ... </h2>
-        }
-      </ul>
+      <Mentors mentors={mentors} />
     </div>
   );
 }
