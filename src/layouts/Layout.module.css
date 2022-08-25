@@ -31,12 +31,23 @@
 }
 
 @media screen and (max-width: 768px) {
+  .layout_container {
+    flex-direction: column;
+    min-height: 100%;
+  }
 
   .navbar {
     position: absolute;
     top: 0;
     left: 0;
   }
+
+  .content {
+    position: relative;
+    padding-top: 30vh;
+    flex-grow: 1;
+    height: 100%;
+  }  
 
   .menutoggle {
     left: auto;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import { TailSpin } from 'react-loading-icons';
 import style from './Mentors.module.css';
 
 export default function Mentors(props) {
@@ -18,12 +19,12 @@ export default function Mentors(props) {
   return (
     <ul className={style.mentors}>
       {
-        mentors ? mentors.slice(startIndex, startIndex + 3).map((mentor) => (
+        mentors.length !== 0 ? mentors.slice(startIndex, startIndex + 3).map((mentor) => (
           <li key={mentor.id} className={style.mentor}>
-            <img src={mentor.avatar} alt={mentor.first_name} />
+            <img className={style.avatar} src={mentor.avatar} alt={mentor.first_name} />
             <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
           </li>
-        )) : <h2>Loading ... </h2>
+        )) : <TailSpin stroke="#97bf0f" strokeWidth={3} />
       }
       { startIndex >= 3 ? (
         <button type="button" className={style.prevbtn} onClick={() => previousPage()} aria-label="Previous">
