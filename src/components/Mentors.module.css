@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 30px;
+  gap: 20px;
   overflow-x: auto;
   height: 55vh;
   position: relative;
@@ -13,6 +13,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+
+.mentor img {
+  height: 30%;
+  border-radius: 20%;
+  box-shadow:  5px 5px 5px #bebebe,
+             -5px -5px 5px #ffffff;
+}
+
+.mentor img:hover {
+  box-shadow:  10px 10px 20px #bebebe,
+             -10px -10px 20px #ffffff;
+}
+
+.mentor h2 {
+  font-size: 1.2rem;
 }
 
 .nextbtn {
