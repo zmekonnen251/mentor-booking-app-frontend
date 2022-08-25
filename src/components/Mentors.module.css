@@ -29,3 +29,18 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+.prevbtn {
+  position: absolute;
+  left: 0;
+  height: 40px;
+  width: 50px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

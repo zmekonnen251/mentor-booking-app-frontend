@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import style from './Mentors.module.css';
 
@@ -9,6 +9,10 @@ export default function Mentors(props) {
 
   const nextPage = () => {
     setStartIndex(startIndex + 3);
+  };
+
+  const previousPage = () => {
+    setStartIndex(startIndex - 3);
   };
 
   return (
@@ -21,6 +25,11 @@ export default function Mentors(props) {
           </li>
         )) : <h2>Loading ... </h2>
       }
+      { startIndex >= 3 ? (
+        <button type="button" className={style.prevbtn} onClick={() => previousPage()} aria-label="Previous">
+          <FaArrowLeft />
+        </button>
+      ) : '' }
       { (mentors.length - startIndex) > 3 ? (
         <button type="button" className={style.nextbtn} onClick={() => nextPage()} aria-label="Next">
           <FaArrowRight />
