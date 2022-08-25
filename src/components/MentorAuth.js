@@ -1,33 +1,86 @@
 import React, { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { signUpUser, signInUser } from '../redux/actions/auth';
+import { signUpMentor, signInMentor } from '../redux/actions/auth';
 
 import '../styles/auth.scss';
 
 const initialState = {
-	// name: '',
+	name: '',
 	email: '',
 	password: '',
-	// confirmPassword: '',
+	confirmPassword: '',
+	image: '',
+	technologies: '',
+	bio: '',
 };
 
 const MentorAuth = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const [mentorImg, setMentorImg] = useState(null);
 	const [isSignUp, setIsSignUp] = useState(false);
 	const [formData, setFormData] = useState(initialState);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		validateForm();
+		setMentorImg(event.target.avatar.files[0]);
+	};
 
-		if (isSignUp) {
-			dispatch(signUpUser({ user: formData }, navigate));
+	const validateEmail = (email, confirmEmail) => {
+		const re =
+			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		if (!isSignUp) {
+			return re.test(String(email).toLowerCase());
 		} else {
-			dispatch(signInUser({ user: formData }, navigate));
+			return re.test(String(email).toLowerCase()) && email === confirmEmail;
 		}
 	};
 
+	const validatePassword = (password, confirmPassword) => {
+		if (!isSignUp) {
+			return password.length > 6;
+		} else {
+			return password === confirmPassword && password.length > 6;
+		}
+	};
+
+	const validateForm = () => {
+		console.log('validateForm');
+		if (!validateEmail(formData.email, formData.confirmEmail)) {
+			setEmailError(true);
+		} else {
+			setEmailError(false);
+		}
+
+		if (!validatePassword(formData.password, formData.confirmPassword)) {
+			setPasswordError(true);
+		} else {
+			setPasswordError(false);
+		}
+
+		if (!emailError && !passwordError) {
+			if (isSignUp) {
+				const data = new FormData();
+				data.append('mentor[name]', formData.name);
+				data.append('mentor[email]', formData.email);
+				data.append('mentor[bio]', formData.email);
+				data.append('mentor[password]', formData.password);
+				data.append('mentor[avatar]', mentorImg);
+
+				const technologies = formData.technologies.split(',');
+
+				dispatch(signUpMentor(data, technologies, navigate, setIsSignUp));
+			} else {
+				const mentor = {
+					email: formData.email,
+					password: formData.password,
+				};
+				dispatch(signInMentor({ mentor }, navigate));
+			}
+		}
+	};
 	const handleChange = (event) => {
 		setFormData({ ...formData, [event.target.name]: event.target.value });
 	};
@@ -84,14 +137,31 @@ const MentorAuth = () => {
 
 						<input
 							type='text'
-							name='specialization'
-							placeholder='Specialization'
+							name='bio'
+							placeholder='Bio'
 							onChange={handleChange}
 							className='auth__form__input'
 						/>
+
+						<input
+							type='text'
+							name='technologies'
+							placeholder='Specializations'
+							onChange={handleChange}
+							className='auth__form__input'
+						/>
+
 						<span className='specialization'>
 							specializations separeted by comma!
 						</span>
+
+						<input
+							type='file'
+							name='avatar'
+							placeholder='Image'
+							onChange={handleChange}
+							className='auth__form__input'
+						/>
 					</>
 				)}
 
