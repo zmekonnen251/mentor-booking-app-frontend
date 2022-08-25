@@ -29,21 +29,23 @@ export default (state = initialState, action) => {
 				...state,
 				authData: null,
 			};
-		// case SIGN_UP_MENTOR:
-		// 	return {
-		// 		...state,
-		// 		mentor: action.payload,
-		// 	};
-		// case SIGN_IN_MENTOR:
-		// 	return {
-		// 		...state,
-		// 		mentor: action.payload,
-		// 	};
-		// case SIGN_OUT_MENTOR:
-		// 	return {
-		// 		...state,
-		// 		mentor: action.payload,
-		// 	};
+		case SIGN_UP_MENTOR:
+			return {
+				...state,
+				authData: action.payload,
+			};
+		case SIGN_IN_MENTOR:
+			console.log(action.payload);
+			localStorage.setItem('profile', JSON.stringify(action?.payload));
+
+			return { ...state, authData: action?.payload };
+		case SIGN_OUT_MENTOR:
+			localStorage.clear();
+
+			return {
+				...state,
+				authData: null,
+			};
 		default:
 			return state;
 	}
