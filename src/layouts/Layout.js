@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import style from './Layout.module.css';
 import routes from '../routes';
 
-export default function Homepage() {
+export default function Layout() {
   const [menu, setMenu] = useState(true);
 
   const clickHandler = () => {
@@ -13,7 +13,7 @@ export default function Homepage() {
   };
 
   return (
-    <div className={style.homepage_container}>
+    <div className={style.layout_container}>
 
       <div className={style.navbar}>
         { menu && <Navbar /> }
@@ -23,13 +23,11 @@ export default function Homepage() {
           <FaBars />
         </button>
 
-        <div>
-          <Routes>
-            {routes.map((route) => (
-              <Route key={`key${route.path}`} path={route.path} element={route.element} exact={route.exact} />
-            ))}
-          </Routes>
-        </div>
+        <Routes>
+          {routes.map((route) => (
+            <Route key={`key${route.path}`} path={route.path} element={route.element} exact={route.exact} />
+          ))}
+        </Routes>
       </div>
     </div>
   );
