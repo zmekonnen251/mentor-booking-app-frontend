@@ -18,12 +18,14 @@ const UserAuth = () => {
 	const navigate = useNavigate();
 	const [isSignUp, setIsSignUp] = useState(false);
 	const [formData, setFormData] = useState(initialState);
+	const [userImg, setUserImg] = useState(null);
 	const [emailError, setEmailError] = useState(false);
 	const [passwordError, setPasswordError] = useState(false);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		validateForm();
+		setUserImg(event.target.avatar.files[0]);
 	};
 
 	const handleChange = (event) => {
@@ -49,6 +51,7 @@ const UserAuth = () => {
 	};
 
 	const validateForm = () => {
+		console.log('validateForm');
 		if (!validateEmail(formData.email, formData.confirmEmail)) {
 			setEmailError(true);
 		} else {
@@ -61,11 +64,23 @@ const UserAuth = () => {
 			setPasswordError(false);
 		}
 
-		if (emailError && passwordError) {
+		if (!emailError && !passwordError) {
 			if (isSignUp) {
-				dispatch(signUpUser({ user: formData }, navigate));
+				console.log('sign up');
+				const data = new FormData();
+				data.append('user[name]', formData.name);
+				data.append('user[email]', formData.email);
+				data.append('user[password]', formData.password);
+				data.append('user[avatar]', userImg);
+
+				console.log(data);
+				dispatch(signUpUser(data, navigate, setIsSignUp));
 			} else {
-				dispatch(signInUser({ user: formData }, navigate));
+				const user = {
+					email: formData.email,
+					password: formData.password,
+				};
+				dispatch(signInUser({ user }, navigate));
 			}
 		}
 	};
@@ -139,6 +154,15 @@ const UserAuth = () => {
 						{passwordError && (
 							<span className='auth__form__error'>Password is not valid</span>
 						)}
+
+						<input
+							type='file'
+							name='avatar'
+							placeholder='Image'
+							onChange={handleChange}
+							className='auth__form__input'
+							required
+						/>
 					</>
 				)}
 
