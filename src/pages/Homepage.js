@@ -4,7 +4,7 @@ import style from './Homepage.module.css';
 
 export default function Homepage() {
   const URL = 'https://random-data-api.com/api/v2/users?size=10';
-  const [mentors, setMentors] = useState(null);
+  const [mentors, setMentors] = useState([]);
 
   useEffect(() => {
     fetch(URL)

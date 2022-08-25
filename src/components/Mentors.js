@@ -21,9 +21,11 @@ export default function Mentors(props) {
           </li>
         )) : <h2>Loading ... </h2>
       }
-      <button type="button" className={style.nextbtn} onClick={() => nextPage()} aria-label="Next">
-        <FaArrowRight />
-      </button>
+      { (mentors.length - startIndex) > 3 ? (
+        <button type="button" className={style.nextbtn} onClick={() => nextPage()} aria-label="Next">
+          <FaArrowRight />
+        </button>
+      ) : '' }
     </ul>
   );
 }
