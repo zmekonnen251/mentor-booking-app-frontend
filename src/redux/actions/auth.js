@@ -81,7 +81,6 @@ export const signUpMentor =	(mentor, navigate, setIsSignUp) => async (dispatch) 
 export const signInMentor = (mentorData, navigate) => async (dispatch) => {
   try {
     const res = await api.signInMentor(mentorData);
-    console.log(res);
     if (res.status === 200) {
       dispatch({
         type: SIGN_IN_MENTOR,

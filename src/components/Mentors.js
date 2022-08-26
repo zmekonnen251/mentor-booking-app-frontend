@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { TailSpin } from 'react-loading-icons';
+import { Link } from 'react-router-dom';
 import style from './Mentors.module.css';
 
 export default function Mentors(props) {
@@ -20,10 +21,10 @@ export default function Mentors(props) {
     <ul className={style.mentors}>
       {
         mentors.length !== 0 ? mentors.slice(startIndex, startIndex + 3).map((mentor) => (
-          <li key={mentor.id} className={style.mentor}>
+          <Link to={`mentor/${mentor.id}`} key={mentor.id} className={style.mentor}>
             <img className={style.avatar} src={mentor.avatar} alt={mentor.first_name} />
             <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
-          </li>
+          </Link>
         )) : <TailSpin stroke="#97bf0f" strokeWidth={3} />
       }
       { startIndex >= 3 ? (

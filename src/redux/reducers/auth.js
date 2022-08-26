@@ -19,7 +19,6 @@ export default (state = initialState, action) => {
         authData: action.payload,
       };
     case SIGN_IN_USER:
-      console.log(action.payload);
       localStorage.setItem('profile', JSON.stringify(action?.payload));
 
       return { ...state, authData: action?.payload };
@@ -35,7 +34,6 @@ export default (state = initialState, action) => {
         authData: action.payload,
       };
     case SIGN_IN_MENTOR:
-      console.log(action.payload);
       localStorage.setItem('profile', JSON.stringify(action?.payload));
 
       return { ...state, authData: action?.payload };
