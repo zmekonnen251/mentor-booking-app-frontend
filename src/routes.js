@@ -2,6 +2,7 @@ import Homepage from './pages/Homepage';
 import UserAuth from './components/UserAuth';
 import MentorAuth from './components/MentorAuth';
 import Details from './pages/Details';
+import Profile from './pages/Profile';
 
 const routes = [
   {
@@ -27,6 +28,12 @@ const routes = [
     title: 'Mentor Details',
     exact: true,
     element: <Details />,
+  },
+  {
+    path: '/profile',
+    title: 'Profile Page',
+    exact: true,
+    element: <Profile />,
   },
 ];
 
