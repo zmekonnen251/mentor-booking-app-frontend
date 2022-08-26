@@ -35,6 +35,10 @@
   border-bottom: 2px dotted gray;
 }
 
+.mentor h2:hover {
+  color: var(--primary);
+}
+
 .nextbtn {
   position: absolute;
   right: 0;

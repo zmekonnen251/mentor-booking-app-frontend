@@ -10,7 +10,6 @@ const routes = [
     exact: true,
     element: <Homepage />,
   },
-
   {
     path: '/auth/user',
     title: 'UserAuth',

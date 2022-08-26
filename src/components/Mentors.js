@@ -21,7 +21,7 @@ export default function Mentors(props) {
     <ul className={style.mentors}>
       {
         mentors.length !== 0 ? mentors.slice(startIndex, startIndex + 3).map((mentor) => (
-          <Link to={`mentors/${mentor.id}`} key={mentor.id} className={style.mentor}>
+          <Link to={`mentor/${mentor.id}`} key={mentor.id} className={style.mentor}>
             <img className={style.avatar} src={mentor.avatar} alt={mentor.first_name} />
             <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
           </Link>
