@@ -7,4 +7,23 @@
 
 .mentor {
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.avatar {
+  flex-basis: 35vw;
+  height: 35vw;
+  border-radius: 30px;
+  box-shadow:  10px 10px 40px #bebebe,
+    -10px -10px 40px #ffffff;
+}
+
+.avatar img {
+  height: inherit;
+}
+
+.details {
+  flex-basis: 30%;
+  padding: 20px;
 }

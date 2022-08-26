@@ -21,10 +21,12 @@ export default function Details() {
     <div className={style.detailscontainer}>
       { mentor ? (
         <div className={style.mentor}>
-          <div>
+          <div className={style.avatar}>
             <img src={mentor.avatar} alt={`${mentor.firt_name} Avatar`} />
           </div>
-          <div>
+          <div className={style.details}>
+            <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
+            <p>{mentor.email}</p>
             <h2>
               ID:
               {id}
