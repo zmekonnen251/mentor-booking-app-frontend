@@ -18,6 +18,7 @@ import style from './Navbar.module.css';
 import { signOutUser } from '../redux/actions/auth';
 
 export default function Navbar() {
+  const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -90,7 +91,7 @@ export default function Navbar() {
         </ul>
         <p>
           <FaRegCopyright />
-          2015 Microverse
+          { `${currentYear} Microverse` }
         </p>
       </div>
     </nav>
