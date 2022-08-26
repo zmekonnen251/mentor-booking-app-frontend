@@ -9,7 +9,7 @@ export default function Profile() {
           <img src="" alt="" />
         </div>
         <div className={style.card_bdy}>
-          <div className={`${style.text} ${style.d_flex}`}>
+          <div className={style.text}>
             <h3>Wuletaw</h3>
             <h3>Wonte</h3>
           </div>
@@ -18,7 +18,7 @@ export default function Profile() {
       </div>
 
       <div className={style.user_contact}>
-        <form className={`${style.d_flex} ${style.class}`}>
+        <form className={style.class}>
           <label htmlFor="user-name">
             User name:
             <input type="text" />
