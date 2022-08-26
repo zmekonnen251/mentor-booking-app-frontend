@@ -15,8 +15,9 @@
   flex-basis: 35vw;
   height: 35vw;
   border-radius: 30px;
-  box-shadow:  10px 10px 40px #bebebe,
-    -10px -10px 40px #ffffff;
+  box-shadow:
+    10px 10px 40px #bebebe,
+    -10px -10px 40px #fff;
 }
 
 .avatar img {
@@ -61,7 +62,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .mentor {
     flex-direction: column;
     align-items: center;
@@ -77,6 +77,5 @@
     align-self: stretch;
     justify-content: stretch;
     margin-top: 20px;
-  }  
-
+  }
 }
