@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaTicketAlt } from 'react-icons/fa';
 import { TailSpin } from 'react-loading-icons';
 import { useParams } from 'react-router-dom';
 import style from './Details.module.css';
@@ -49,6 +50,10 @@ export default function Details() {
                 <h5>{mentor.address.country}</h5>
               </li>
             </ul>
+            <button type="button" className={style.reserve}>
+              <FaTicketAlt />
+              Reserve
+            </button>
           </div>
         </div>
       ) : <div><TailSpin stroke="#97bf0f" strokeWidth={3} /></div>}
