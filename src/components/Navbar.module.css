@@ -25,6 +25,12 @@
   padding: 10px 15px;
   text-transform: uppercase;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #4b3505ef;
+  color: white;
 }
 
 .footer {
