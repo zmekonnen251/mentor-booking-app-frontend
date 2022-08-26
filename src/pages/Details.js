@@ -27,10 +27,28 @@ export default function Details() {
           <div className={style.details}>
             <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
             <p>{mentor.email}</p>
-            <h2>
-              ID:
-              {id}
-            </h2>
+            <ul className={style.textdetails}>
+              <li>
+                <h5>ID:</h5>
+                <h5>{id}</h5>
+              </li>
+              <li>
+                <h5>Phone:</h5>
+                <h5>{mentor.phone_number}</h5>
+              </li>
+              <li>
+                <h5>Date of Birth:</h5>
+                <h5>{mentor.date_of_birth}</h5>
+              </li>
+              <li>
+                <h5>City:</h5>
+                <h5>{mentor.address.city}</h5>
+              </li>
+              <li>
+                <h5>Country:</h5>
+                <h5>{mentor.address.country}</h5>
+              </li>
+            </ul>
           </div>
         </div>
       ) : <div><TailSpin stroke="#97bf0f" strokeWidth={3} /></div>}
