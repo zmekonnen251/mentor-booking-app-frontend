@@ -1,3 +1,5 @@
+/* eslint-disable no-tabs */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import jwtDecode from 'jwt-decode';
@@ -46,9 +48,14 @@ export default function Navbar() {
       </Link>
       <div className={style.menu}>
         {user ? (
-          <button className={style.logout} onClick={logOut} type="button">
+          <a
+            className={style.logout}
+            onClick={logOut}
+            type="button"
+            aria-hidden="true"
+          >
             Log out
-          </button>
+          </a>
         ) : (
           <>
             <NavLink to="/auth/user">Log in</NavLink>
