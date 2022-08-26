@@ -6,28 +6,27 @@ export default function Profile() {
     <div className={style.user_container}>
       <div className={style.user_details}>
         <div className={style.img_cont}>
-          <img src="" alt="" />
+          <img src="https://robohash.org/etetvoluptate.png?size=300x300&set=set1" alt="User Avatar" />
         </div>
         <div className={style.card_bdy}>
-          <div className={style.text}>
-            <h3>Wuletaw</h3>
-            <h3>Wonte</h3>
+          <div className={style.name}>
+            <h3>John Doe</h3>
           </div>
           <p>example@mail.com</p>
         </div>
       </div>
 
       <div className={style.user_contact}>
-        <form className={style.class}>
+        <form className={style.user_form}>
           <label htmlFor="user-name">
             User name:
-            <input type="text" />
+            <input type="text" value="john.doe" className={style.user_input} />
           </label>
           <label htmlFor="password">
             Password:
-            <input type="text" />
+            <input type="password" value="johndoe" className={style.user_input} />
           </label>
-          <button type="submit">submit</button>
+          <button type="submit">Save</button>
         </form>
       </div>
     </div>
