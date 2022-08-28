@@ -1,11 +1,9 @@
 /* eslint-disable no-tabs */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import jwtDecode from 'jwt-decode';
-import {
-  NavLink, Link, useLocation, useNavigate,
-} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import jwtDecode from "jwt-decode";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaFacebookF,
   FaGooglePlusG,
@@ -13,19 +11,19 @@ import {
   FaLinkedinIn,
   FaRegCopyright,
   FaTwitter,
-} from 'react-icons/fa';
-import style from './Navbar.module.css';
-import { signOutUser } from '../redux/actions/auth';
+} from "react-icons/fa";
+import style from "./Navbar.module.css";
+import { signOutUser } from "../redux/actions/auth";
 
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   const logOut = () => {
     setUser(null);
-    navigate('/auth/user');
+    navigate("/auth/user");
     dispatch(signOutUser());
   };
 
@@ -38,7 +36,7 @@ export default function Navbar() {
       }
     }
 
-    setUser(JSON.parse(localStorage.getItem('profile')));
+    setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 
   return (
@@ -65,7 +63,7 @@ export default function Navbar() {
         <NavLink to="/" active className={style.activelink}>
           Home
         </NavLink>
-        <NavLink to="/home">Reserve</NavLink>
+        <NavLink to="/reserve">Reserve</NavLink>
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/details">Details</NavLink>
       </div>
