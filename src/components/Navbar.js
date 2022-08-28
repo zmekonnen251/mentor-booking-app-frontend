@@ -3,7 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import jwtDecode from "jwt-decode";
-import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  NavLink, Link, useLocation, useNavigate,
+} from "react-router-dom";
 import {
   FaFacebookF,
   FaGooglePlusG,
