@@ -49,14 +49,17 @@ export default function Navbar() {
       </Link>
       <div className={style.menu}>
         {user ? (
-          <a
-            className={style.logout}
-            onClick={logOut}
-            type="button"
-            aria-hidden="true"
-          >
-            Log out
-          </a>
+          <>
+            <a
+              className={style.logout}
+              onClick={logOut}
+              type="button"
+              aria-hidden="true"
+            >
+              Log out
+            </a>
+            <NavLink to="/profile">Profile</NavLink>
+          </>
         ) : (
           <>
             <NavLink to="/auth/user">Log in</NavLink>
@@ -67,7 +70,6 @@ export default function Navbar() {
           Home
         </NavLink>
         <NavLink to="/home">Reserve</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
         <NavLink to="/details">Details</NavLink>
       </div>
 
@@ -91,7 +93,7 @@ export default function Navbar() {
         </ul>
         <p>
           <FaRegCopyright />
-          { `${currentYear} Microverse` }
+          {`${currentYear} Microverse`}
         </p>
       </div>
     </nav>
