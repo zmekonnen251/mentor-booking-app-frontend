@@ -19,17 +19,11 @@ export default function Profile() {
       </div>
 
       <div className={style.user_contact}>
-        <form className={style.user_form}>
-          <label htmlFor="user-name">
-            User name:
-            <input type="text" value="john.doe" className={style.user_input} />
-          </label>
-          <label htmlFor="password">
-            Password:
-            <input type="password" value="johndoe" className={style.user_input} />
-          </label>
+        <div className={style.user_form}>
+          <p>{user.user.user.name}</p>
+          <p>{user.user.user.email}</p>
           <button type="submit">Save</button>
-        </form>
+        </div>
       </div>
     </div>
   );
