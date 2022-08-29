@@ -1,4 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { signOutUser } from '../redux/actions/auth';
 import style from './Profile.module.css';
 
 export default function Profile() {
@@ -22,7 +25,7 @@ export default function Profile() {
         <div className={style.user_form}>
           <p>{user.user.user.name}</p>
           <p>{user.user.user.email}</p>
-          <button type="submit">Save</button>
+          <button type="button">Logout</button>
         </div>
       </div>
     </div>
