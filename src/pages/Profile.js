@@ -22,9 +22,9 @@ export default function Profile() {
         </div>
         <div className={style.card_bdy}>
           <div className={style.name}>
-            <h3>John Doe</h3>
+            <h3>{user.user.user.name}</h3>
           </div>
-          <p>example@mail.com</p>
+          <p>{user.user.user.email}</p>
         </div>
       </div>
 
