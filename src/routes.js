@@ -2,6 +2,7 @@ import Homepage from './pages/Homepage';
 import UserAuth from './components/UserAuth';
 import MentorAuth from './components/MentorAuth';
 import Details from './pages/Details';
+import MyReservations from './pages/MyReservations';
 
 const routes = [
   {
@@ -9,6 +10,12 @@ const routes = [
     title: 'Homepage',
     exact: true,
     element: <Homepage />,
+  },
+  {
+    path: '/myreservations',
+    title: 'My Reservations',
+    exact: true,
+    element: <MyReservations />,
   },
   {
     path: '/auth/user',
