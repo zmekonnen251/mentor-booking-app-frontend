@@ -18,7 +18,7 @@ export default function Profile() {
     <div className={style.user_container}>
       <div className={style.user_details}>
         <div className={style.img_cont}>
-          <img src={`${user.user.avatar}`} alt="Avatar" />
+          <img className={style.avatar} src={`${user.user.avatar}`} alt="Avatar" />
         </div>
         <div className={style.card_bdy}>
           <div className={style.name}>
@@ -30,7 +30,7 @@ export default function Profile() {
 
       <div className={style.user_contact}>
         <div className={style.user_form}>
-          <p>{user.user.user.name}</p>
+          <p className={style.user_name}>{user.user.user.name}</p>
           <p>{user.user.user.email}</p>
           <button onClick={logOut} type="button">Logout</button>
         </div>
