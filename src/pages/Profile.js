@@ -6,6 +6,13 @@ import style from './Profile.module.css';
 
 export default function Profile() {
   const user = JSON.parse(localStorage.getItem('profile'));
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logOut = () => {
+    navigate('/auth/user');
+    dispatch(signOutUser());
+  };
 
   return (
     <div className={style.user_container}>
