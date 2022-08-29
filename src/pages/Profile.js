@@ -32,7 +32,7 @@ export default function Profile() {
         <div className={style.user_form}>
           <p>{user.user.user.name}</p>
           <p>{user.user.user.email}</p>
-          <button type="button">Logout</button>
+          <button onClick={logOut} type="button">Logout</button>
         </div>
       </div>
     </div>
