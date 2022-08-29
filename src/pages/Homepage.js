@@ -18,9 +18,7 @@ export default function Homepage() {
   return (
     <div className={style.homepage}>
       <div className={style.pagetitle}>
-        <h1 className={style.maintitle}>
-          Our Mentors
-        </h1>
+        <h1 className={style.maintitle}>Our Mentors</h1>
         <p>Please select a mentor</p>
       </div>
       <Mentors mentors={mentors} />

@@ -1,109 +1,121 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable no-tabs */
 import {
-  SIGN_UP_USER,
-  SIGN_IN_USER,
-  SIGN_OUT_USER,
-  SIGN_UP_MENTOR,
-  SIGN_IN_MENTOR,
-  SIGN_OUT_MENTOR,
+	SIGN_UP_USER,
+	SIGN_IN_USER,
+	SIGN_OUT_USER,
+	SIGN_UP_MENTOR,
+	SIGN_IN_MENTOR,
+	SIGN_OUT_MENTOR,
 } from '../actionTypes';
 
 import * as api from '../api';
 
-export const signUpUser =	(userData, navigate, setIsSignUp) => async (dispatch) => {
-	  try {
-	    const res = await api.signUpUser(userData);
-	    if (res.status === 201) {
-	      dispatch({
-	        type: SIGN_UP_USER,
-	        payload: res.data,
-	      });
-	      setIsSignUp(false);
-	      navigate('/auth/user');
-	    }
-	  } catch (error) {
-	    // console.log(error);
-	  }
-};
+export const signUpUser =
+	(userData, navigate, setIsSignUp) => async (dispatch) => {
+		try {
+			const res = await api.signUpUserApi(userData);
+			if (res.status === 201) {
+				dispatch({
+					type: SIGN_UP_USER,
+					payload: res.data,
+				});
+				setIsSignUp(false);
+				navigate('/auth/user');
+			}
+		} catch (error) {
+			// console.log(error);
+		}
+	};
 
-export const signInUser = (userData, navigate) => async (dispatch) => {
-  try {
-    const res = await api.signInUser(userData);
-    if (res.status === 200) {
-      dispatch({
-        type: SIGN_IN_USER,
-        payload: res.data,
-      });
-      navigate('/');
-    }
-  } catch (error) {
-    // console.log(error);
-  }
+export const signInUser = (data, navigate) => async (dispatch) => {
+	try {
+		const res = await api.signInUserApi(data);
+
+		if (res.status === 200) {
+			const { jwt, user } = res.data;
+			const { avatar } = user;
+			const userData = { jwt, avatar, ...user.user };
+			userData.type = 'user';
+			dispatch({
+				type: SIGN_IN_USER,
+				payload: userData,
+			});
+			navigate('/');
+		}
+	} catch (error) {
+		// console.log(error);
+	}
 };
 
 export const signOutUser = () => async (dispatch) => {
-  try {
-    const res = await api.signOutUser();
+	try {
+		const res = await api.signOutUserApi();
 
-    if (res.status === 200) {
-      dispatch({
-        type: SIGN_OUT_USER,
-        payload: res.data,
-      });
-    }
-  } catch (error) {
-    // console.log(error);
-  }
+		if (res.status === 200) {
+			dispatch({
+				type: SIGN_OUT_USER,
+				payload: res.data,
+			});
+		}
+	} catch (error) {
+		// console.log(error);
+	}
 };
 
-export const signUpMentor =	(mentor, navigate, setIsSignUp) => async (dispatch) => {
-	  try {
-	    const res = await api.signUpMentor(mentor.mentorData);
-	    if (res.status === 201) {
-	      const id = res.data.mentor_id;
-	      const { technologies } = mentor;
-	      const data = { technologies, mentor_id: id };
-	      await api.addSpecialization(data);
-	      dispatch({
-	        type: SIGN_UP_MENTOR,
-	        payload: res.data.message,
-	      });
+export const signUpMentor =
+	(mentor, navigate, setIsSignUp) => async (dispatch) => {
+		try {
+			const res = await api.signUpMentorApi(mentor.mentorData);
+			if (res.status === 201) {
+				const id = res.data.mentor_id;
+				const { technologies } = mentor;
+				const data = { technologies, mentor_id: id };
+				await api.addSpecializationApi(data);
 
-	      setIsSignUp(false);
-	      navigate('/auth/mentor');
-	    }
-	  } catch (error) {
-	    // console.log(error);
-	  }
-};
+				dispatch({
+					type: SIGN_UP_MENTOR,
+					payload: res.data.message,
+				});
 
-export const signInMentor = (mentorData, navigate) => async (dispatch) => {
-  try {
-    const res = await api.signInMentor(mentorData);
-    if (res.status === 200) {
-      dispatch({
-        type: SIGN_IN_MENTOR,
-        payload: res.data,
-      });
-      navigate('/');
-    }
-  } catch (error) {
-    // console.log(error);
-  }
+				setIsSignUp(false);
+				navigate('/auth/mentor');
+			}
+		} catch (error) {
+			// console.log(error);
+		}
+	};
+
+export const signInMentor = (data, navigate) => async (dispatch) => {
+	try {
+		const res = await api.signInMentorApi(data);
+		if (res.status === 200) {
+			const { jwt, mentor } = res.data;
+			const { avatar } = mentor;
+			const mentorData = { jwt, avatar, ...mentor.mentor };
+			mentorData.type = 'mentor';
+			dispatch({
+				type: SIGN_IN_MENTOR,
+				payload: mentorData,
+			});
+			navigate('/');
+		}
+	} catch (error) {
+		// console.log(error);
+	}
 };
 
 export const signOutMentor = (navigate) => async (dispatch) => {
-  try {
-    const res = await api.signOutMentor();
-    if (res.status === 200) {
-      dispatch({
-        type: SIGN_OUT_MENTOR,
-        payload: res.data,
-      });
-      navigate('/');
-    }
-  } catch (error) {
-    // console.log(error);
-  }
+	try {
+		const res = await api.signOutMentorApi();
+		if (res.status === 200) {
+			dispatch({
+				type: SIGN_OUT_MENTOR,
+				payload: res.data,
+			});
+			navigate('/');
+		}
+	} catch (error) {
+		// console.log(error);
+	}
 };
