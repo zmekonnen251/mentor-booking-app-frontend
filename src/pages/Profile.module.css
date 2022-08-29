@@ -47,7 +47,6 @@
 }
 
 .user_form > button {
-  align-self: flex-end;
   padding: 6px 9px;
   background-color: var(--primary);
   color: white;
