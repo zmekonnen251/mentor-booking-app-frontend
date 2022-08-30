@@ -1,6 +1,7 @@
 :root {
   --primary: #97bf0f;
   --bg-color: white;
+  --gray: #dee2e6;
 }
 
 *,
@@ -25,6 +26,7 @@ h1,
 h2,
 h3,
 a,
+th,
 p {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -37,4 +39,23 @@ a {
 .active {
   background-color: var(--primary);
   color: white;
+}
+
+.hr-center {
+  text-align: center;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table td,
+table th {
+  border-top: 1px solid var(--gray);
+}
+
+table th {
+  padding: 4px 0;
+  border-bottom: 2px solid var(--gray);
 }

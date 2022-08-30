@@ -70,11 +70,10 @@ export default function Navbar() {
           Home
         </NavLink>
         <NavLink to="/reserve">Reserve</NavLink>
-        <NavLink to="/shop">Shop</NavLink>
+        <NavLink to="/home">Reserve</NavLink>
+        <NavLink to="/myreservations">My Reservations</NavLink>
+        <NavLink to="/profile">Profile</NavLink>
         <NavLink to="/details">Details</NavLink>
-      </div>
-        <NavLink to="/shop">Shop</NavLink>
-
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
           <>
             <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>

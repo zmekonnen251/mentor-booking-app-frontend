@@ -3,6 +3,8 @@ import Reserve from "./pages/Reserve";
 import UserAuth from "./components/UserAuth";
 import MentorAuth from "./components/MentorAuth";
 import Details from "./pages/Details";
+import Homepage from './pages/Homepage';
+import MyReservations from './pages/MyReservations';
 import Profile from './pages/Profile';
 import PendingMentors from './components/PendingMentors';
 
@@ -15,8 +17,14 @@ const routes = [
     element: <Homepage />,
   },
   {
-    path: "/auth/user",
-    title: "UserAuth",
+    path: '/myreservations',
+    title: 'My Reservations',
+    exact: true,
+    element: <MyReservations />,
+  },
+  {
+    path: '/auth/user',
+    title: 'UserAuth',
     exact: true,
     element: <UserAuth />,
   },
