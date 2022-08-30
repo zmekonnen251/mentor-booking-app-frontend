@@ -18,6 +18,7 @@ import style from "./Navbar.module.css";
 import { signOutUser } from "../redux/actions/auth";
 
 export default function Navbar() {
+  const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,8 +26,8 @@ export default function Navbar() {
 
   const logOut = () => {
     setUser(null);
+    dispatch(signOutUser(navigate, user.type));
     navigate("/auth/user");
-    dispatch(signOutUser());
   };
 
   useEffect(() => {
@@ -48,14 +49,17 @@ export default function Navbar() {
       </Link>
       <div className={style.menu}>
         {user ? (
-          <a
-            className={style.logout}
-            onClick={logOut}
-            type="button"
-            aria-hidden="true"
-          >
-            Log out
-          </a>
+          <>
+            <a
+              className={style.logout}
+              onClick={logOut}
+              type="button"
+              aria-hidden="true"
+            >
+              Log out
+            </a>
+            <NavLink to="/profile">Profile</NavLink>
+          </>
         ) : (
           <>
             <NavLink to="/auth/user">Log in</NavLink>
@@ -69,7 +73,15 @@ export default function Navbar() {
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/details">Details</NavLink>
       </div>
+        <NavLink to="/shop">Shop</NavLink>
 
+        {(user?.role === 'admin' || user?.role === 'superadmin') && (
+          <>
+            <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
+            <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
+          </>
+        )}
+      </div>
       <div className={style.footer}>
         <ul className={style.social}>
           <a href="facebook" target="_blank" aria-label="facebook">
@@ -90,7 +102,7 @@ export default function Navbar() {
         </ul>
         <p>
           <FaRegCopyright />
-          2015 Microverse
+          {`${currentYear} Microverse`}
         </p>
       </div>
     </nav>
