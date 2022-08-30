@@ -46,36 +46,34 @@ export default function Navbar() {
         BookAMentor
       </Link>
       <div className={style.menu}>
-        {user ? (
-          <>
-            <a
-              className={style.logout}
-              onClick={logOut}
-              type="button"
-              aria-hidden="true"
-            >
-              Log out
-            </a>
-            <NavLink to="/profile">Profile</NavLink>
-            <NavLink to="/myreservations">My Reservations</NavLink>
-          </>
-        ) : (
-          <>
-            <NavLink to="/auth/user">Log in</NavLink>
-          </>
-        )}
-
+        {!user && <NavLink to="/auth/user">Log in</NavLink>}
         <NavLink to="/" active className={style.activelink}>
           Home
         </NavLink>
+        {user && (
+          <>
+            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/myreservations">My Reservations</NavLink>
+          </>
+        ) }
         <NavLink to="/reserve">Reserve</NavLink>
         <NavLink to="/details">Details</NavLink>
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
-          <NavLink to="admin/pending-mentors">Approve Mentors</NavLink>
-          <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
+          <NavLink to="admin/pending-mentors">Pending Mentors</NavLink>
+          <NavLink to="admin/approved-mentors">Mentors List</NavLink>
         </>
+        )}
+        {user && (
+        <a
+          className={style.logout}
+          onClick={logOut}
+          type="button"
+          aria-hidden="true"
+        >
+          Log out
+        </a>
         )}
       </div>
       <div className={style.footer}>

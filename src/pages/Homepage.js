@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Mentors from '../components/Mentors';
 import style from './Homepage.module.css';
 
 export default function Homepage() {
-  const URL = 'https://random-data-api.com/api/v2/users?size=10';
-  const [mentors, setMentors] = useState([]);
-
-  useEffect(() => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setMentors(data);
-      })
-      .catch((error) => setMentors(error.message));
-  }, []);
+  const approvedMentors = useSelector((state) => state.mentors.approvedMentors);
 
   return (
     <div className={style.homepage}>
@@ -23,7 +13,7 @@ export default function Homepage() {
         </h1>
         <p>Please select a mentor</p>
       </div>
-      <Mentors mentors={mentors} />
+      <Mentors mentors={approvedMentors} />
     </div>
   );
 }
