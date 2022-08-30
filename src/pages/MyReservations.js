@@ -44,9 +44,9 @@ export default function MyReservations() {
                       <p>{mentor.email}</p>
                     </div>
                   </td>
-                  <td>{mentor.date_of_birth}</td>
-                  <td>
-                    <button type="button">Delete</button>
+                  <td className="hr-center">{mentor.date_of_birth}</td>
+                  <td className="hr-center">
+                    <button type="button" className={style.deletebtn}>Cancel</button>
                   </td>
                 </tr>
               ))}

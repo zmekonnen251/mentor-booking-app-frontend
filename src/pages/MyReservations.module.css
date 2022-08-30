@@ -46,3 +46,10 @@
   display: flex;
   align-items: center;
 }
+
+.deletebtn {
+  background-color: orange;
+  color: white;
+  font-weight: 800;
+  padding: 8px 10px;
+}
