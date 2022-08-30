@@ -25,9 +25,8 @@ export default function Navbar() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   const logOut = () => {
+    dispatch(signOutUser(navigate, user.type));
     setUser(null);
-    navigate('/auth/user');
-    dispatch(signOutUser());
   };
 
   useEffect(() => {
@@ -72,7 +71,15 @@ export default function Navbar() {
         <NavLink to="/home">Reserve</NavLink>
         <NavLink to="/details">Details</NavLink>
       </div>
+        <NavLink to="/shop">Shop</NavLink>
 
+        {(user?.role === 'admin' || user?.role === 'superadmin') && (
+          <>
+            <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
+            <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
+          </>
+        )}
+      </div>
       <div className={style.footer}>
         <ul className={style.social}>
           <a href="facebook" target="_blank" aria-label="facebook">
