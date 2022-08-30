@@ -20,3 +20,9 @@ export const signUpMentor = (data) => API.post('mentors', data);
 export const signInMentor = (data) => API.post('mentors/sign_in', data);
 export const signOutMentor = () => API.delete('mentors/sign_out');
 export const addSpecialization = (data) => API.post('technologies', data);
+
+export const fetchMentorsApi = () => API.get('/mentors/list');
+export const approveMentorApi = (mentorId) => API.put('/approve_mentor', { id: mentorId, approved: true });
+
+export const banMentorApi = (mentorId) => API.put('/ban_mentor', { id: mentorId, approved: false });
+export const removeMentorApi = (mentorId) => API.delete(`/remove_mentor/${mentorId}`);

@@ -4,7 +4,9 @@
   --gray: #dee2e6;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
