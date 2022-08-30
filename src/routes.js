@@ -2,6 +2,7 @@ import Homepage from './pages/Homepage';
 import UserAuth from './components/UserAuth';
 import MentorAuth from './components/MentorAuth';
 import Details from './pages/Details';
+import PendingMentors from './components/PendingMentors';
 
 const routes = [
   {
@@ -27,6 +28,13 @@ const routes = [
     title: 'Mentor Details',
     exact: true,
     element: <Details />,
+  },
+
+  {
+    path: 'admin/approve-mentors',
+    title: 'Pending Aprrovals',
+    exact: true,
+    element: <PendingMentors />,
   },
 ];
 
