@@ -26,3 +26,6 @@ export const approveMentorApi = (mentorId) => API.put('/approve_mentor', { id: m
 
 export const banMentorApi = (mentorId) => API.put('/ban_mentor', { id: mentorId, approved: false });
 export const removeMentorApi = (mentorId) => API.delete(`/remove_mentor/${mentorId}`);
+export const reserveMentorApi = (data) => API.post('/reserve', data);
+export const cancelReservationApi = (data) => API.delete('/cancel_reservation', data);
+export const fetchReservationsApi = () => API.get('/reservations');

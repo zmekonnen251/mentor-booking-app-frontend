@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaTicketAlt } from 'react-icons/fa';
 import { TailSpin } from 'react-loading-icons';
-import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
 import style from './Details.module.css';
+import { reserveMentor } from '../redux/actions/mentors';
 
 export default function Details() {
-  const URL = 'https://random-data-api.com/api/users/random_user';
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const [mentor, setMentor] = useState(null);
-
-  useEffect(() => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setMentor(data);
-      })
-      .catch((error) => setMentor(error.message));
-  }, []);
+  const mentors = useSelector((state) => state.mentors.approvedMentors);
+  const mentor = mentors.filter((mentor) => mentor.id === +id)[0];
+  const user = JSON.parse(localStorage.getItem('profile'));
 
   return (
     <div className={style.detailscontainer}>
       { mentor ? (
         <div className={style.mentor}>
           <div className={style.avatar}>
-            <img src={mentor.avatar} alt={`${mentor.firt_name} Avatar`} />
+            <img src={mentor.avatar_url} alt={`${mentor.name} Avatar`} />
           </div>
           <div className={style.details}>
-            <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
+            <h2>{mentor.name}</h2>
+            <h2>{mentor.email}</h2>
             <p>{mentor.email}</p>
             <ul className={style.textdetails}>
               <li>
@@ -35,25 +31,37 @@ export default function Details() {
               </li>
               <li>
                 <h5>Phone:</h5>
-                <h5>{mentor.phone_number}</h5>
-              </li>
-              <li>
-                <h5>Date of Birth:</h5>
-                <h5>{mentor.date_of_birth}</h5>
+                <h5>000-000-000</h5>
               </li>
               <li>
                 <h5>City:</h5>
-                <h5>{mentor.address.city}</h5>
+                <h5>Some city</h5>
               </li>
               <li>
                 <h5>Country:</h5>
-                <h5>{mentor.address.country}</h5>
+                <h5>Some country</h5>
               </li>
+              <ul className={style.tech}>
+                {mentor.technologies.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
             </ul>
-            <button type="button" className={style.reserve}>
+            <button
+              disabled={!user}
+              type="button"
+              className={style.reserve}
+            >
               <FaTicketAlt />
               Reserve
             </button>
+            {!user && (
+              <>
+                <p>You must log in or signup first to reserve a mentor.</p>
+                <NavLink to="/auth/user" className={style.reserve}>Login</NavLink>
+              </>
+            )}
+
           </div>
         </div>
       ) : <div><TailSpin stroke="#97bf0f" strokeWidth={3} /></div>}
