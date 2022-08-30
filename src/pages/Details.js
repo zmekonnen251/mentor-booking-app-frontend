@@ -4,7 +4,7 @@ import { TailSpin } from 'react-loading-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import style from './Details.module.css';
-import { reserveMentor } from '../redux/actions/mentors';
+import { reserveMentor } from '../redux/actions/mentorReservation';
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -12,6 +12,9 @@ export default function Details() {
   const mentors = useSelector((state) => state.mentors.approvedMentors);
   const mentor = mentors.filter((mentor) => mentor.id === +id)[0];
   const user = JSON.parse(localStorage.getItem('profile'));
+  const reserveData = new FormData();
+  reserveData.append('mentor_id', mentor.id);
+  reserveData.append('user_id', user.id);
 
   return (
     <div className={style.detailscontainer}>
@@ -51,6 +54,7 @@ export default function Details() {
               disabled={!user}
               type="button"
               className={style.reserve}
+              onClick={dispatch(reserveMentor(reserveData))}
             >
               <FaTicketAlt />
               Reserve
