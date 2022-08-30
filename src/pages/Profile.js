@@ -18,21 +18,23 @@ export default function Profile() {
     <div className={style.user_container}>
       <div className={style.user_details}>
         <div className={style.img_cont}>
-          <img className={style.avatar} src={`${user.user.avatar}`} alt="Avatar" />
+          <img className={style.avatar} src={`${user.avatar}`} alt="Avatar" />
         </div>
         <div className={style.card_bdy}>
           <div className={style.name}>
-            <h3>{user.user.user.name}</h3>
+            <h3>{user.name}</h3>
           </div>
-          <p>{user.user.user.email}</p>
+          <p>{user.email}</p>
         </div>
       </div>
 
       <div className={style.user_contact}>
         <div className={style.user_form}>
-          <p className={style.user_name}>{user.user.user.name}</p>
-          <p>{user.user.user.email}</p>
-          <button onClick={logOut} type="button">Logout</button>
+          <p className={style.user_name}>{user.name}</p>
+          <p>{user.email}</p>
+          <button onClick={logOut} type="button">
+            Logout
+          </button>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
 /* eslint-disable no-tabs */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import jwtDecode from "jwt-decode";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import jwtDecode from 'jwt-decode';
 import {
   NavLink, Link, useLocation, useNavigate,
-} from "react-router-dom";
+} from 'react-router-dom';
 import {
   FaFacebookF,
   FaGooglePlusG,
@@ -13,21 +13,20 @@ import {
   FaLinkedinIn,
   FaRegCopyright,
   FaTwitter,
-} from "react-icons/fa";
-import style from "./Navbar.module.css";
-import { signOutUser } from "../redux/actions/auth";
+} from 'react-icons/fa';
+import style from './Navbar.module.css';
+import { signOutUser } from '../redux/actions/auth';
 
 export default function Navbar() {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   const logOut = () => {
-    setUser(null);
     dispatch(signOutUser(navigate, user.type));
-    navigate("/auth/user");
+    setUser(null);
   };
 
   useEffect(() => {
@@ -39,7 +38,7 @@ export default function Navbar() {
       }
     }
 
-    setUser(JSON.parse(localStorage.getItem("profile")));
+    setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
 
   return (
@@ -70,15 +69,9 @@ export default function Navbar() {
           Home
         </NavLink>
         <NavLink to="/reserve">Reserve</NavLink>
-        <NavLink to="/home">Reserve</NavLink>
         <NavLink to="/myreservations">My Reservations</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
         <NavLink to="/details">Details</NavLink>
-<<<<<<< HEAD
-=======
-        <NavLink to="/shop">Shop</NavLink>
 
->>>>>>> 236d02f (Fix merge confilict and linter errors)
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
           <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
