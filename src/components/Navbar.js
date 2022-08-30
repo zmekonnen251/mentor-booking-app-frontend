@@ -18,6 +18,7 @@ import style from './Navbar.module.css';
 import { signOutUser } from '../redux/actions/auth';
 
 export default function Navbar() {
+  const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -47,14 +48,17 @@ export default function Navbar() {
       </Link>
       <div className={style.menu}>
         {user ? (
-          <a
-            className={style.logout}
-            onClick={logOut}
-            type="button"
-            aria-hidden="true"
-          >
-            Log out
-          </a>
+          <>
+            <a
+              className={style.logout}
+              onClick={logOut}
+              type="button"
+              aria-hidden="true"
+            >
+              Log out
+            </a>
+            <NavLink to="/profile">Profile</NavLink>
+          </>
         ) : (
           <>
             <NavLink to="/auth/user">Log in</NavLink>
@@ -65,8 +69,9 @@ export default function Navbar() {
           Home
         </NavLink>
         <NavLink to="/home">Reserve</NavLink>
+        <NavLink to="/details">Details</NavLink>
+      </div>
         <NavLink to="/shop">Shop</NavLink>
-        {/* <NavLink to="/details">Details</NavLink> */}
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
           <>
@@ -95,7 +100,7 @@ export default function Navbar() {
         </ul>
         <p>
           <FaRegCopyright />
-          2015 Microverse
+          {`${currentYear} Microverse`}
         </p>
       </div>
     </nav>
