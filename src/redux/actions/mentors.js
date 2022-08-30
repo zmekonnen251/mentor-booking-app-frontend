@@ -14,6 +14,7 @@ import {
 export const fetchMentors = () => async (dispatch) => {
   try {
     const res = await fetchMentorsApi();
+    console.log(res);
     const unapprovedMentors = res.data.unapproved_mentors;
     const approvedMentors = res.data.approved_mentors;
     console.log({ unapprovedMentors, approvedMentors });

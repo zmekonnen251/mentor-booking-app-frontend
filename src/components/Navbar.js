@@ -25,8 +25,7 @@ export default function Navbar() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   const logOut = () => {
-    dispatch(signOutUser(navigate, user.type));
-    setUser(null);
+    dispatch(signOutUser(navigate, user.type, setUser));
   };
 
   useEffect(() => {
@@ -58,6 +57,7 @@ export default function Navbar() {
               Log out
             </a>
             <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/myreservations">My Reservations</NavLink>
           </>
         ) : (
           <>
@@ -69,12 +69,11 @@ export default function Navbar() {
           Home
         </NavLink>
         <NavLink to="/reserve">Reserve</NavLink>
-        <NavLink to="/myreservations">My Reservations</NavLink>
         <NavLink to="/details">Details</NavLink>
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
-          <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
+          <NavLink to="admin/pending-mentors">Approve Mentors</NavLink>
           <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
         </>
         )}

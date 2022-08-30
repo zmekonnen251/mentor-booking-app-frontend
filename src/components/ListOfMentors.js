@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { banMentor, removeMentor } from '../redux/actions/mentors';
-import styles from './MentorsList.module.css';
+import styles from './ListOfMentors.module.css';
 
 const ListOfMentors = () => {
   const dispatch = useDispatch();
@@ -36,10 +36,16 @@ const ListOfMentors = () => {
                 <td>{mentor.name}</td>
                 <td>{mentor.email}</td>
                 <td>
-                  <button type="button" onClick={() => dispatch(banMentor(mentor.id))}>
+                  <button
+                    type="button"
+                    onClick={() => dispatch(banMentor(mentor.id))}
+                  >
                     Ban
                   </button>
-                  <button type="button" onClick={() => dispatch(removeMentor(mentor.id))}>
+                  <button
+                    type="button"
+                    onClick={() => dispatch(removeMentor(mentor.id))}
+                  >
                     Remove
                   </button>
                 </td>

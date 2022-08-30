@@ -6,6 +6,7 @@ import Details from './pages/Details';
 import MyReservations from './pages/MyReservations';
 import Profile from './pages/Profile';
 import PendingMentors from './components/PendingMentors';
+import ListOfMentors from './components/ListOfMentors';
 
 const routes = [
   {
@@ -51,10 +52,16 @@ const routes = [
     element: <Profile />,
   },
   {
-    path: 'admin/approve-mentors',
+    path: 'admin/pending-mentors',
     title: 'Pending Aprrovals',
     exact: true,
     element: <PendingMentors />,
+  },
+  {
+    path: 'admin/approved-mentors',
+    title: 'Approved Mentors',
+    exact: true,
+    element: <ListOfMentors />,
   },
 ];
 
