@@ -74,11 +74,16 @@ export default function Navbar() {
         <NavLink to="/myreservations">My Reservations</NavLink>
         <NavLink to="/profile">Profile</NavLink>
         <NavLink to="/details">Details</NavLink>
+<<<<<<< HEAD
+=======
+        <NavLink to="/shop">Shop</NavLink>
+
+>>>>>>> 236d02f (Fix merge confilict and linter errors)
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
-          <>
-            <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
-            <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
-          </>
+        <>
+          <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
+          <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
+        </>
         )}
       </div>
       <div className={style.footer}>
