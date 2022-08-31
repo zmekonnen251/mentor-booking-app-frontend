@@ -48,22 +48,23 @@
   background-color: #e2e3e4;
 }
 
-.tech  {
+.tech {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  gap:1rem;
+  gap: 1rem;
 }
 
 .tech li {
   list-style: none;
-  padding:0.5rem;
-  background-color:rgba(150, 191, 15, 0.7);
-  color:white;
-  border:none;
-  border-radius:5px;
+  padding: 0.5rem;
+  background-color: rgba(150, 191, 15, 0.7);
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
+
 .reserve {
   display: flex;
   align-items: center;
