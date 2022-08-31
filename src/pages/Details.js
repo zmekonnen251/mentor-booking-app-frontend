@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTicketAlt } from 'react-icons/fa';
 import { TailSpin } from 'react-loading-icons';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,13 +12,27 @@ export default function Details() {
   const mentors = useSelector((state) => state.mentors.approvedMentors);
   const mentor = mentors.filter((mentor) => mentor.id === +id)[0];
   const user = JSON.parse(localStorage.getItem('profile'));
-  const reserveData = new FormData();
-  reserveData.append('mentor_id', mentor.id);
-  reserveData.append('user_id', user.id);
+  const initialState = { country: '', city: '', date: '' };
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const reserveData = new FormData();
+    reserveData.append('mentor_id', mentor.id);
+    reserveData.append('user_id', user.id);
+    reserveData.append('country', formData.country);
+    reserveData.append('city', formData.city);
+    reserveData.append('date', formData.date);
+    dispatch(reserveMentor(reserveData));
+  };
 
   return (
     <div className={style.detailscontainer}>
-      { mentor ? (
+      {mentor ? (
         <div className={style.mentor}>
           <div className={style.avatar}>
             <img src={mentor.avatar_url} alt={`${mentor.name} Avatar`} />
@@ -50,15 +64,19 @@ export default function Details() {
                 ))}
               </ul>
             </ul>
-            <button
-              disabled={!user}
-              type="button"
-              className={style.reserve}
-              onClick={dispatch(reserveMentor(reserveData))}
-            >
-              <FaTicketAlt />
-              Reserve
-            </button>
+            <form action="" onSubmit={handleSubmit}>
+              <input type="text" name="city" placeholder="city" onChange={handleChange} />
+              <input type="date" name="date" id="" onChange={handleChange} />
+              <input type="" name="country" placeholder="country" onChange={handleChange} />
+              <button
+                disabled={!user}
+                type="submit"
+                className={style.reserve}
+              >
+                <FaTicketAlt />
+                Reserve
+              </button>
+            </form>
             {!user && (
               <>
                 <p>You must log in or signup first to reserve a mentor.</p>
