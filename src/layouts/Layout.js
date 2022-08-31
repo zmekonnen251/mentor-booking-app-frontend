@@ -24,7 +24,7 @@ export default function Layout() {
             className={style.menutoggle}
             aria-label="Menu toggle"
             onClick={() => {
-						  clickHandler();
+              clickHandler();
             }}
           >
             <FaBars />
