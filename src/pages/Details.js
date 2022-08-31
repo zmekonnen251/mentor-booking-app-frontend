@@ -65,9 +65,11 @@ export default function Details() {
               </ul>
             </ul>
             <form action="" onSubmit={handleSubmit}>
-              <input type="text" name="city" placeholder="city" onChange={handleChange} />
+              <div className={style.wrapper}>
+                <input type="" name="country" placeholder="country" onChange={handleChange} />
+                <input type="text" name="city" placeholder="city" onChange={handleChange} />
+              </div>
               <input type="date" name="date" id="" onChange={handleChange} />
-              <input type="" name="country" placeholder="country" onChange={handleChange} />
               <button
                 disabled={!user}
                 type="submit"
