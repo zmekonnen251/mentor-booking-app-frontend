@@ -32,10 +32,10 @@ export const cancelReservation = (data) => async (dispatch) => {
 export const fetchReservation = () => async (dispatch) => {
   try {
     const res = await fetchReservationsApi();
-    if (res.status === 201) {
+    if (res.status === 200) {
       dispatch({
         type: FETCH_RESERVATIONS,
-        payload: 'successful',
+        payload: res.data,
       });
     }
   } catch (error) {
