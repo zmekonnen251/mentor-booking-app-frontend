@@ -69,7 +69,7 @@ export default function Details() {
                 <input type="" name="country" placeholder="country" onChange={handleChange} />
                 <input type="text" name="city" placeholder="city" onChange={handleChange} />
               </div>
-              <input type="date" name="date" id="" onChange={handleChange} />
+              <input className={style.date} type="date" name="date" id="" onChange={handleChange} />
               <button
                 disabled={!user}
                 type="submit"
