@@ -46,7 +46,8 @@ export default function Navbar() {
         BookAMentor
       </Link>
       <div className={style.menu}>
-        {!user && <NavLink to="/auth/user">Log in</NavLink>}
+        {!user && <NavLink to="/auth/user/signin">Log in</NavLink>}
+        {!user && <NavLink to="/auth/mentor/signup">Sign up</NavLink>}
         <NavLink to="/" active className={style.activelink}>
           Home
         </NavLink>
@@ -57,7 +58,6 @@ export default function Navbar() {
           </>
         ) }
         <NavLink to="/reserve">Reserve</NavLink>
-        <NavLink to="/details">Details</NavLink>
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
