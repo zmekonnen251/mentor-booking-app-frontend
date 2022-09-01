@@ -3,30 +3,42 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from '../redux/store';
-import Homepage from '../pages/Homepage';
-import MyReservations from '../pages/MyReservations';
 import Layout from '../layouts/Layout';
+import Mentors from '../components/Mentors';
+import Navbar from '../components/Navbar';
+import PendingMentors from '../components/PendingMentors';
 
-describe('Testing if all pages render correctly', () => {
-  it('Testing Homepage page', () => {
+describe('Testing if all components render correctly', () => {
+
+  it('Testing Layout Component', () => {
+    const tree = render(
+      <Provider store={configureStore}>
+        <Layout />
+      </Provider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('Testing Mentors Component', () => {
     const tree = render(
       <Provider store={configureStore}>
         <Router>
-          <Homepage />
+          <Mentors />
         </Router>
       </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
-  it('Testing MyReservations page', () => {
+
+  it('Testing Navbar Component', () => {
     const tree = render(
       <Provider store={configureStore}>
         <Router>
-          <MyReservations />
+          <Navbar />
         </Router>
       </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
+
 });
-
