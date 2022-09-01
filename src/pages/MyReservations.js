@@ -1,9 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { TailSpin } from 'react-loading-icons';
 import style from './MyReservations.module.css';
+import { cancelReservation } from '../redux/actions/mentorReservation';
 
 export default function MyReservations() {
+  const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservations);
 
   return (
@@ -39,7 +41,13 @@ export default function MyReservations() {
                   </td>
                   <td className="hr-center">{reservation.date}</td>
                   <td className="hr-center">
-                    <button type="button" className={style.deletebtn}>Cancel</button>
+                    <button
+                      type="button"
+                      className={style.deletebtn}
+                      onClick={() => dispatch(cancelReservation(reservation.id))}
+                    >
+                      Cancel Reservation
+                    </button>
                   </td>
                 </tr>
               ))}

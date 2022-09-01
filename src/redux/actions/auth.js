@@ -20,7 +20,7 @@ export const signUpUser =	(userData, navigate, setIsSignUp) => async (dispatch) 
 	        payload: res.data,
 	      });
 	      setIsSignUp(false);
-	      navigate('/auth/user');
+	      navigate('/auth/user/signin');
 	    }
 	  } catch (error) {
 	    // console.log(error);
@@ -83,7 +83,7 @@ export const signUpMentor =	(mentor, navigate, setIsSignUp) => async (dispatch) 
 	      });
 
 	      setIsSignUp(false);
-	      navigate('/auth/mentor');
+	      navigate('/auth/mentor/signin');
 	    }
 	  } catch (error) {
 	    // console.log(error);

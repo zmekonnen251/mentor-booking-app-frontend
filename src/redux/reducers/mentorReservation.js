@@ -6,9 +6,16 @@ import {
 export default (state = [], action) => {
   switch (action.type) {
     case RESERVE_MENTOR:
-      return action.payload;
+      // eslint-disable-next-line no-case-declarations
+      const updatedState = [
+        ...state, action.payload.newBooking,
+      ];
+      action.payload.navigate('/myreservations');
+      return updatedState;
     case CANCEL_RESERVE_MENTOR:
-      return action.payload;
+      return [
+        ...state.filter((reservation) => reservation.id !== action.payload),
+      ];
     case FETCH_RESERVATIONS:
       return action.payload;
     default:

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { FaTicketAlt } from 'react-icons/fa';
 import { TailSpin } from 'react-loading-icons';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useNavigate } from 'react-router-dom';
 import style from './Details.module.css';
 import { reserveMentor } from '../redux/actions/mentorReservation';
 
 export default function Details() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const mentors = useSelector((state) => state.mentors.approvedMentors);
   const mentor = mentors.filter((mentor) => mentor.id === +id)[0];
@@ -19,7 +20,7 @@ export default function Details() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const reserveData = new FormData();
     reserveData.append('mentor_id', mentor.id);
@@ -27,7 +28,7 @@ export default function Details() {
     reserveData.append('country', formData.country);
     reserveData.append('city', formData.city);
     reserveData.append('date', formData.date);
-    dispatch(reserveMentor(reserveData));
+    dispatch(reserveMentor(reserveData, navigate));
   };
 
   return (
@@ -64,7 +65,7 @@ export default function Details() {
                 ))}
               </ul>
             </ul>
-            <form action="" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className={style.wrapper}>
                 <input type="" name="country" placeholder="country" onChange={handleChange} />
                 <input type="text" name="city" placeholder="city" onChange={handleChange} />

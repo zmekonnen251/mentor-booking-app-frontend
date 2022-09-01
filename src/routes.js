@@ -22,16 +22,28 @@ const routes = [
     element: <MyReservations />,
   },
   {
-    path: '/auth/user',
+    path: '/auth/user/signup',
     title: 'UserAuth',
     exact: true,
-    element: <UserAuth />,
+    element: <UserAuth type />,
   },
   {
-    path: '/auth/mentor',
+    path: '/auth/user/signin',
+    title: 'UserAuth',
+    exact: true,
+    element: <UserAuth type={false} />,
+  },
+  {
+    path: '/auth/mentor/signup',
     title: 'MentorAuth',
     exact: true,
-    element: <MentorAuth />,
+    element: <MentorAuth type />,
+  },
+  {
+    path: '/auth/mentor/signin',
+    title: 'MentorAuth',
+    exact: true,
+    element: <MentorAuth type={false} />,
   },
   {
     path: '/mentor/:id',
@@ -52,13 +64,13 @@ const routes = [
     element: <Profile />,
   },
   {
-    path: 'admin/pending-mentors',
+    path: 'pending-mentors',
     title: 'Pending Aprrovals',
     exact: true,
     element: <PendingMentors />,
   },
   {
-    path: 'admin/approved-mentors',
+    path: 'approved-mentors',
     title: 'Approved Mentors',
     exact: true,
     element: <ListOfMentors />,
