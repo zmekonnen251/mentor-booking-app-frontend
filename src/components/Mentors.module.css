@@ -18,15 +18,16 @@
 .mentorImg {
   width: 200px;
   height: 200px;
+}
+
+.avatar {
   border-radius: 20%;
   box-shadow:
     5px 5px 5px #bebebe,
     -5px -5px 5px #fff;
-}
-
-.avatar {
   height: 100%;
   width: 100%;
+  display: inline-block;
 }
 
 .avatar:hover {
@@ -35,10 +36,10 @@
     -10px -10px 20px #fff;
 }
 
-.mentor h2 {
+.name {
   font-size: 1.2rem;
-  padding: 20px 10px;
-  border-bottom: 2px dotted gray;
+  padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+  text-align: center;
 }
 
 .mentor h2:hover {
@@ -96,11 +97,20 @@
   .mentors {
     flex-direction: column;
     min-height: 100%;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
 
-  .avatar {
-    width: 80vw;
-    height: 80vw;
+  .mentors ul {
+    display: none;
+  }
+
+  .name {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+    text-align: center;
+  }
+
+  .bio {
+    font-size: 0.9rem;
   }
 }

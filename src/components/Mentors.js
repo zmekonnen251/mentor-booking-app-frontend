@@ -25,7 +25,8 @@ export default function Mentors(props) {
             <div className={style.mentorImg}>
               <img className={style.avatar} src={mentor.avatar_url} alt={mentor.name} />
             </div>
-            <h2>{`${mentor.name}, ${mentor.bio}`}</h2>
+            <h2 className={style.name}>{mentor.name}</h2>
+            <h2 className={style.bio}>{mentor.bio}</h2>
             <ul>
               {mentor.technologies.map((tech) => (
                 <li key={tech}>{tech}</li>

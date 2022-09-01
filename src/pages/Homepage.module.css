@@ -15,4 +15,12 @@
 .maintitle {
   text-transform: uppercase;
   letter-spacing: 0.5ch;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .pagetitle p {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
 }
