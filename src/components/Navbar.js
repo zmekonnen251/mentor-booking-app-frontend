@@ -45,6 +45,7 @@ export default function Navbar() {
       <Link to="/" className={style.logo}>
         BookAMentor
       </Link>
+      {user && <img src={user.avatar} alt={`${user.mentor_name}`} />}
       <div className={style.menu}>
         {!user && <NavLink to="/auth/user/signin">Log in</NavLink>}
         {!user && <NavLink to="/auth/mentor/signup">Sign up</NavLink>}
@@ -55,9 +56,9 @@ export default function Navbar() {
           <>
             <NavLink to="/profile">Profile</NavLink>
             <NavLink to="/myreservations">My Reservations</NavLink>
+            <NavLink to="/reserve">Reserve</NavLink>
           </>
         ) }
-        <NavLink to="/reserve">Reserve</NavLink>
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
