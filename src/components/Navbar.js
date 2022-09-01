@@ -62,8 +62,8 @@ export default function Navbar() {
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
-          <NavLink to="admin/pending-mentors">Pending Mentors</NavLink>
-          <NavLink to="admin/approved-mentors">Mentors List</NavLink>
+          <NavLink to="pending-mentors">Pending Mentors</NavLink>
+          <NavLink to="approved-mentors">Mentors List</NavLink>
         </>
         )}
         {user && (

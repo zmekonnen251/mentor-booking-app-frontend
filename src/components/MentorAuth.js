@@ -13,7 +13,7 @@ const initialState = {
   email: '',
   password: '',
   confirmPassword: '',
-  image: '',
+  avatar: '',
   technologies: '',
   bio: '',
 };
@@ -22,7 +22,6 @@ const MentorAuth = (props) => {
   const { type } = props;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [mentorImg, setMentorImg] = useState(null);
   const [isSignUp, setIsSignUp] = useState(type);
   const [formData, setFormData] = useState(initialState);
   const [emailError, setEmailError] = useState(false);
@@ -63,7 +62,7 @@ const MentorAuth = (props) => {
         data.append('mentor[email]', formData.email);
         data.append('mentor[bio]', formData.email);
         data.append('mentor[password]', formData.password);
-        data.append('mentor[avatar]', mentorImg);
+        data.append('mentor[avatar]', formData.avatar);
 
         const technologies = formData.technologies.split(',');
         const mentor = {
@@ -85,11 +84,14 @@ const MentorAuth = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     validateForm();
-    setMentorImg(event.target.avatar.files[0]);
   };
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+
+    if (event.target.name === 'avatar') {
+      setFormData({ ...formData, [event.target.name]: event.target.files[0] });
+    }
   };
 
   const switchMode = () => {

@@ -62,7 +62,7 @@ export const signOutUser = (navigate, type, setUser) => async (dispatch) => {
         payload: res.data,
       });
       setUser(null);
-      navigate(`/auth/${type}`);
+      navigate(`/auth/${type}/signin`);
     }
   } catch (error) {
     // console.log(error);
