@@ -66,16 +66,12 @@
 }
 
 .reserve {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--primary);
   padding: 8px 20px;
-  margin-top: 20px;
   color: white;
-  gap: 1ch;
   font-size: 1.2rem;
   border-radius: 20px;
+  text-align: center;
 }
 
 .wrapper {
@@ -94,7 +90,9 @@
   line-height: 1.5;
 }
 
-.wrapper > input {
+.wrapper > input,
+select,
+option {
   flex-basis: 100%;
   padding: 0.5rem;
   border: none;
@@ -103,9 +101,17 @@
   color: rgba(150, 191, 15, 0.7);
 }
 
+.wrapper > select {
+  padding: 0.6rem;
+}
+
+.wrapper > option {
+  padding: 0.6rem;
+}
+
 .date {
   display: block;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 0.6rem;
   color: #495057;
   background-color: #fff;
   border: 1px solid #ced4da;

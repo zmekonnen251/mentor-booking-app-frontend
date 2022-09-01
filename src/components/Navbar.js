@@ -1,11 +1,11 @@
 /* eslint-disable no-tabs */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import jwtDecode from "jwt-decode";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import jwtDecode from 'jwt-decode';
 import {
   NavLink, Link, useLocation, useNavigate,
-} from "react-router-dom";
+} from 'react-router-dom';
 import {
   FaFacebookF,
   FaGooglePlusG,
@@ -13,21 +13,19 @@ import {
   FaLinkedinIn,
   FaRegCopyright,
   FaTwitter,
-} from "react-icons/fa";
-import style from "./Navbar.module.css";
-import { signOutUser } from "../redux/actions/auth";
+} from 'react-icons/fa';
+import style from './Navbar.module.css';
+import { signOutUser } from '../redux/actions/auth';
 
 export default function Navbar() {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   const logOut = () => {
-    setUser(null);
-    dispatch(signOutUser(navigate, user.type));
-    navigate("/auth/user");
+    dispatch(signOutUser(navigate, user.type, setUser));
   };
 
   useEffect(() => {
@@ -39,7 +37,7 @@ export default function Navbar() {
       }
     }
 
-    setUser(JSON.parse(localStorage.getItem("profile")));
+    setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
 
   return (
@@ -47,38 +45,36 @@ export default function Navbar() {
       <Link to="/" className={style.logo}>
         BookAMentor
       </Link>
+      {user && <img src={user.avatar} alt={`${user.mentor_name}`} />}
       <div className={style.menu}>
-        {user ? (
-          <>
-            <a
-              className={style.logout}
-              onClick={logOut}
-              type="button"
-              aria-hidden="true"
-            >
-              Log out
-            </a>
-            <NavLink to="/profile">Profile</NavLink>
-          </>
-        ) : (
-          <>
-            <NavLink to="/auth/user">Log in</NavLink>
-          </>
-        )}
-
+        {!user && <NavLink to="/auth/user/signin">Log in</NavLink>}
+        {!user && <NavLink to="/auth/mentor/signup">Sign up</NavLink>}
         <NavLink to="/" active className={style.activelink}>
           Home
         </NavLink>
-        <NavLink to="/reserve">Reserve</NavLink>
-        <NavLink to="/home">Reserve</NavLink>
-        <NavLink to="/myreservations">My Reservations</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
-        <NavLink to="/details">Details</NavLink>
-        {(user?.role === 'admin' || user?.role === 'superadmin') && (
+        {user && (
           <>
-            <NavLink to="admin/approve-mentors">Approve Mentors</NavLink>
-            <NavLink to="admin/approved-mentors">Approved Mentors</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/myreservations">My Reservations</NavLink>
+            <NavLink to="/reserve">Reserve</NavLink>
           </>
+        ) }
+
+        {(user?.role === 'admin' || user?.role === 'superadmin') && (
+        <>
+          <NavLink to="admin/pending-mentors">Pending Mentors</NavLink>
+          <NavLink to="admin/approved-mentors">Mentors List</NavLink>
+        </>
+        )}
+        {user && (
+        <a
+          className={style.logout}
+          onClick={logOut}
+          type="button"
+          aria-hidden="true"
+        >
+          Log out
+        </a>
         )}
       </div>
       <div className={style.footer}>

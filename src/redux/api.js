@@ -13,16 +13,19 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const signUpUser = (data) => API.post('users', data);
-export const signInUser = (data) => API.post('users/sign_in', data);
-export const signOutUser = () => API.delete('users/sign_out');
-export const signUpMentor = (data) => API.post('mentors', data);
-export const signInMentor = (data) => API.post('mentors/sign_in', data);
-export const signOutMentor = () => API.delete('mentors/sign_out');
-export const addSpecialization = (data) => API.post('technologies', data);
+export const signUpUserApi = (data) => API.post('users', data);
+export const signInUserApi = (data) => API.post('users/sign_in', data);
+export const signOutUserApi = () => API.delete('users/sign_out');
+export const signUpMentorApi = (data) => API.post('mentors', data);
+export const signInMentorApi = (data) => API.post('mentors/sign_in', data);
+export const signOutMentorApi = () => API.delete('mentors/sign_out');
+export const addSpecializationApi = (data) => API.post('technologies', data);
 
 export const fetchMentorsApi = () => API.get('/mentors/list');
 export const approveMentorApi = (mentorId) => API.put('/approve_mentor', { id: mentorId, approved: true });
 
 export const banMentorApi = (mentorId) => API.put('/ban_mentor', { id: mentorId, approved: false });
 export const removeMentorApi = (mentorId) => API.delete(`/remove_mentor/${mentorId}`);
+export const reserveMentorApi = (data) => API.post('/reserve', data);
+export const cancelReservationApi = (id) => API.delete(`/cancel_reservation/${id}`);
+export const fetchReservationsApi = () => API.get('/reservations');

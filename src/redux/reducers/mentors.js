@@ -11,8 +11,8 @@ export default (state = [], action) => {
     case FETCH_MENTORS:
       return {
         ...state,
-        unapprovedMentors: [...action.payload.unapprovedMentors],
-        approvedMentors: [...action.payload.approvedMentors],
+        unapprovedMentors: action.payload.unapprovedMentors,
+        approvedMentors: action.payload.approvedMentors,
       };
     case APPROVE_MENTOR:
       const approvedMentor = state.unapprovedMentors.find(

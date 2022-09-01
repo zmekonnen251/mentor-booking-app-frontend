@@ -22,8 +22,15 @@ export default function Mentors(props) {
       {
         mentors.length !== 0 ? mentors.slice(startIndex, startIndex + 3).map((mentor) => (
           <Link to={`mentor/${mentor.id}`} key={mentor.id} className={style.mentor}>
-            <img className={style.avatar} src={mentor.avatar} alt={mentor.first_name} />
-            <h2>{`${mentor.first_name} ${mentor.last_name}`}</h2>
+            <div className={style.mentorImg}>
+              <img className={style.avatar} src={mentor.avatar_url} alt={mentor.name} />
+            </div>
+            <h2>{`${mentor.name}, ${mentor.bio}`}</h2>
+            <ul>
+              {mentor.technologies.map((tech) => (
+                <li key={tech}>{tech}</li>
+              ))}
+            </ul>
           </Link>
         )) : <TailSpin stroke="#97bf0f" strokeWidth={3} />
       }

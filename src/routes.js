@@ -1,18 +1,17 @@
-import Homepage from "./pages/Homepage";
-import Reserve from "./pages/Reserve";
-import UserAuth from "./components/UserAuth";
-import MentorAuth from "./components/MentorAuth";
-import Details from "./pages/Details";
 import Homepage from './pages/Homepage';
+import Reserve from './pages/Reserve';
+import UserAuth from './components/UserAuth';
+import MentorAuth from './components/MentorAuth';
+import Details from './pages/Details';
 import MyReservations from './pages/MyReservations';
 import Profile from './pages/Profile';
 import PendingMentors from './components/PendingMentors';
-
+import ListOfMentors from './components/ListOfMentors';
 
 const routes = [
   {
-    path: "/",
-    title: "Homepage",
+    path: '/',
+    title: 'Homepage',
     exact: true,
     element: <Homepage />,
   },
@@ -23,29 +22,41 @@ const routes = [
     element: <MyReservations />,
   },
   {
-    path: '/auth/user',
+    path: '/auth/user/signup',
     title: 'UserAuth',
     exact: true,
-    element: <UserAuth />,
+    element: <UserAuth type />,
   },
   {
-    path: "/auth/mentor",
-    title: "MentorAuth",
+    path: '/auth/user/signin',
+    title: 'UserAuth',
     exact: true,
-    element: <MentorAuth />,
+    element: <UserAuth type={false} />,
   },
   {
-    path: "/mentor/:id",
-    title: "Mentor Details",
+    path: '/auth/mentor/signup',
+    title: 'MentorAuth',
+    exact: true,
+    element: <MentorAuth type />,
+  },
+  {
+    path: '/auth/mentor/signin',
+    title: 'MentorAuth',
+    exact: true,
+    element: <MentorAuth type={false} />,
+  },
+  {
+    path: '/mentor/:id',
+    title: 'Mentor Details',
     exact: true,
     element: <Details />,
   },
   {
-    path: "/reserve",
-    title: "Reserve",
+    path: '/reserve',
+    title: 'Reserve',
     exact: true,
     element: <Reserve />,
-   },
+  },
   {
     path: '/profile',
     title: 'Profile Page',
@@ -53,10 +64,16 @@ const routes = [
     element: <Profile />,
   },
   {
-    path: 'admin/approve-mentors',
+    path: 'pending-mentors',
     title: 'Pending Aprrovals',
     exact: true,
     element: <PendingMentors />,
+  },
+  {
+    path: 'approved-mentors',
+    title: 'Approved Mentors',
+    exact: true,
+    element: <ListOfMentors />,
   },
 ];
 

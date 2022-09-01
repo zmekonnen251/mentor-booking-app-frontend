@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React, { useState } from 'react';
@@ -15,10 +16,11 @@ const initialState = {
   confirmPassword: '',
 };
 
-const UserAuth = () => {
+const UserAuth = (props) => {
+  const { type } = props;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(type);
   const [formData, setFormData] = useState(initialState);
   const [userImg, setUserImg] = useState(null);
   const [emailError, setEmailError] = useState(false);
@@ -173,7 +175,7 @@ const UserAuth = () => {
 					  : "Don't have an account ? Sign Up"}
         </button>
 
-        <NavLink to="/auth/mentor">
+        <NavLink to="/auth/mentor/signin">
           <button type="button" className="auth__mode">
             Sign in as a mentor
           </button>
@@ -181,6 +183,10 @@ const UserAuth = () => {
       </form>
     </div>
   );
+};
+
+UserAuth.defaultProps = {
+  type: false,
 };
 
 export default UserAuth;

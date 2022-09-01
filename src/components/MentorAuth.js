@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React, { useState } from 'react';
@@ -17,11 +18,12 @@ const initialState = {
   bio: '',
 };
 
-const MentorAuth = () => {
+const MentorAuth = (props) => {
+  const { type } = props;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [mentorImg, setMentorImg] = useState(null);
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(type);
   const [formData, setFormData] = useState(initialState);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -178,7 +180,7 @@ const MentorAuth = () => {
 					  ? 'Already have an account ? Sign in'
 					  : "Don't have an account ? Sign Up"}
         </button>
-        <NavLink to="/auth/user">
+        <NavLink to="/auth/user/signin">
           <button className="auth__mode" type="button">
             Sign in as a user
           </button>
@@ -189,3 +191,7 @@ const MentorAuth = () => {
 };
 
 export default MentorAuth;
+
+MentorAuth.defaultProps = {
+  type: false,
+};
