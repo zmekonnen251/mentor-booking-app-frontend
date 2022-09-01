@@ -1,54 +1,63 @@
-# Mentor Booking App
+# Mentor-booking-App-Frontend
 
-> The front-end of a mentor booking application that lets users to book collaboration session with coding mentors from around the world who are already registered in the application. 
+This app is aim to connect mentor and mentee from around the world, to make software development journey easier for the newbies developer by getting tips, ideas and guide from experience software developer (mentor).
 
 ## Built With
 
-- Reactjs
-- SASS
-- React-router
+- React
 - Redux
+- CSS
 
-## Live Demo (if available)
+## Get Started
 
-[Live Demo Link](https://livedemo.com)
+```
+To get a clone of the project, run `git clone https://github.com/zmekonnen251/Mentor-Booking-App-Frontend.git`
 
+```
 
-## Getting Started
+```
+cd `Mentor-booking-App-Frontend`
+```
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+### Available Scripts
 
+In the project directory, you can run:
 
-To get a local copy up and running follow these simple example steps.
+**`npx install`** to install require tools for the project to run
 
-### Prerequisites
+**`npm start`**
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+**`http://localhost:30001/`**
 
 ## Authors
 
-👤 **Author1**
+👤 **Adekunle Ismail**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@ismailakinkunmi](https://github.com/ismailakinkunmi)
+- LinkedIn: [Adekunle Ismail](https://www.linkedin.com/in/adismail4/)
 
-👤 **Author2**
+👤 **Zelalem Mekonnen**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@zmekonnen251](https://github.com/zmekonnen251)
+- LinkedIn: [Zelalem Getachew](https://www.linkedin.com/in/zelalem-getachew/)
+- Twitter: [Zelalem Getachew](https://twitter.com/mek_zela)
+
+👤 **Alfred Bisimwa**
+
+- GitHub: [@Alfredbis29](https://github.com/Alfredbis29)
+- Twitter: [Alfred Bisimwa](https://twitter.com/AlfredBisimwa1)
+- LinkedIn: [Alfred Bisimwa](https://www.linkedin.com/in/alfred-bisimwa-0501a81a8/)
+
+👤 **zieeco**
+
+- GitHub: [@zieeco](https://github.com/zieeco)
+- Twitter [@zieecodes](https://twitter.com/zieecodes)
+- LinkedIn: [Isaac Imaobong Samuel](https://www.linkedin.com/in/isaac-imaobong-samuel)
+
+👤 **Wuletaw Wonte**
+
+- GitHub: [@wuletawwonte](https://github.com/wuletawwonte)
+- Twitter: [Wuletaw Wonte](https://twitter.com/wuletaww)
 
 ## 🤝 Contributing
 
@@ -62,10 +71,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
+- Hat tip to microverse for their support
 - Inspiration
-- etc
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
