@@ -90,7 +90,9 @@
   line-height: 1.5;
 }
 
-.wrapper > input,select,option {
+.wrapper > input,
+select,
+option {
   flex-basis: 100%;
   padding: 0.5rem;
   border: none;
@@ -99,11 +101,11 @@
   color: rgba(150, 191, 15, 0.7);
 }
 
-.wrapper > select{
+.wrapper > select {
   padding: 0.6rem;
 }
 
-.wrapper > option{
+.wrapper > option {
   padding: 0.6rem;
 }
 
@@ -135,4 +137,3 @@
     margin-top: 20px;
   }
 }
-

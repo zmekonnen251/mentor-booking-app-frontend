@@ -14,14 +14,16 @@
   flex-direction: column;
   align-items: center;
 }
-.mentorImg{
+
+.mentorImg {
   width: 200px;
   height: 200px;
   border-radius: 20%;
   box-shadow:
-  5px 5px 5px #bebebe,
-  -5px -5px 5px #fff;
+    5px 5px 5px #bebebe,
+    -5px -5px 5px #fff;
 }
+
 .avatar {
   height: 100%;
   width: 100%;
@@ -43,21 +45,21 @@
   color: var(--primary);
 }
 
-.mentors ul  {
+.mentors ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  gap:1rem;
+  gap: 1rem;
 }
 
 .mentors ul li {
   list-style: none;
-  padding:0.5rem;
-  background-color:rgba(150, 191, 15, 0.7);
-  color:white;
-  border:none;
-  border-radius:5px;
+  padding: 0.5rem;
+  background-color: rgba(150, 191, 15, 0.7);
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
 .nextbtn {
