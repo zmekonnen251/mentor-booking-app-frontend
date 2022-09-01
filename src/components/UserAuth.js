@@ -14,6 +14,7 @@ const initialState = {
   confirmEmail: '',
   password: '',
   confirmPassword: '',
+  avatar: '',
 };
 
 const UserAuth = (props) => {
