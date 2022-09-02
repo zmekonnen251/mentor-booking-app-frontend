@@ -139,7 +139,7 @@ const UserAuth = (props) => {
           required
         />
         {!isSignUp && passwordError && (
-        <span className="auth__form__error">Password is not valid</span>
+        <span className="auth__form__error">Password, 6 characters above</span>
         )}
         {isSignUp && (
         <>
@@ -152,7 +152,7 @@ const UserAuth = (props) => {
             required
           />
           {passwordError && (
-          <span className="auth__form__error">Password is not valid</span>
+          <span className="auth__form__error">Password, 6 characters above</span>
           )}
 
           <input
