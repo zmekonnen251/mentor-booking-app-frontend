@@ -40,6 +40,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
+    background-color: white;
   }
 
   .content {
@@ -53,5 +55,6 @@
     left: auto;
     right: 2rem;
     border-radius: 5px;
+    z-index: 3;
   }
 }

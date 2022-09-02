@@ -67,3 +67,13 @@
   width: 100%;
   display: inline-block;
 }
+
+@media screen and (max-width: 768px) {
+  .user_container {
+    flex-direction: column;
+  }
+
+  .user_form p {
+    display: none;
+  }
+}
