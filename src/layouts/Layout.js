@@ -15,7 +15,7 @@ export default function Layout() {
   };
 
   return (
-    <div className={style.layout_container}>
+    <div className={style.layout_container} data-testid="layout">
       <Router>
         <div className={style.navbar}>{menu && <Navbar />}</div>
         <div className={style.content}>

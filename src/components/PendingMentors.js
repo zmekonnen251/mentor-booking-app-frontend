@@ -7,7 +7,6 @@ const PendingMentors = () => {
 
   const { role } = JSON.parse(localStorage.getItem('profile'));
   let unapprovedMentors = [];
-  console.log(useSelector((state) => state.mentors.unapprovedMentors));
   if (role === 'superadmin') {
     unapprovedMentors = useSelector(
       (state) => state.mentors.unapprovedMentors,
