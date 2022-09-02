@@ -53,3 +53,17 @@
   font-weight: 800;
   padding: 8px 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .datecolumn {
+    display: none;
+  }
+
+  .mentorname h3 {
+    font-size: 0.8rem;
+  }
+
+  .avatar {
+    display: none;
+  }
+}

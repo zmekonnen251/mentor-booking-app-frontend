@@ -22,7 +22,7 @@ export default function MyReservations() {
           <thead>
             <tr>
               <th>Mentors</th>
-              <th>Scheduled Date</th>
+              <th className={style.datecolumn}>Scheduled Date</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -31,7 +31,7 @@ export default function MyReservations() {
               : reservations.map((reservation) => (
                 <tr key={reservation.id}>
                   <td className={style.mentordata}>
-                    <img src={reservation.avatar} alt={`${reservation.mentor_name}`} />
+                    <img className={style.avatar} src={reservation.avatar} alt={`${reservation.mentor_name}`} />
                     <div className={style.mentorname}>
                       <h3>{reservation.mentor_name}</h3>
                       <h3>{reservation.mentor_email}</h3>
@@ -39,7 +39,7 @@ export default function MyReservations() {
                       <p>{reservation.country}</p>
                     </div>
                   </td>
-                  <td className="hr-center">{reservation.date}</td>
+                  <td className={style.datecolumn}>{reservation.date}</td>
                   <td className="hr-center">
                     <button
                       type="button"

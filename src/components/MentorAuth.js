@@ -60,7 +60,7 @@ const MentorAuth = (props) => {
         const data = new FormData();
         data.append('mentor[name]', formData.name);
         data.append('mentor[email]', formData.email);
-        data.append('mentor[bio]', formData.email);
+        data.append('mentor[bio]', formData.bio);
         data.append('mentor[password]', formData.password);
         data.append('mentor[avatar]', formData.avatar);
 
