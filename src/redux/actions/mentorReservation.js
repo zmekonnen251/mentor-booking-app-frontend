@@ -5,7 +5,6 @@ export const reserveMentor = (data, navigate) => async (dispatch) => {
   try {
     const res = await reserveMentorApi(data);
     if (res.status === 200) {
-      console.log(res.data);
       dispatch({
         type: RESERVE_MENTOR,
         payload: { newBooking: res.data, navigate },
@@ -34,7 +33,6 @@ export const fetchReservation = () => async (dispatch) => {
   try {
     const res = await fetchReservationsApi();
     if (res.status === 200) {
-      console.log(res.data);
       dispatch({
         type: FETCH_RESERVATIONS,
         payload: res.data,
