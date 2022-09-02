@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import PropTypes from 'prop-types';

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useDispatch, useSelector } from 'react-redux';
 import { approveMentor } from '../redux/actions/mentors';
 import styles from './PendingMentors.module.css';

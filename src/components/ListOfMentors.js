@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { banMentor, removeMentor } from '../redux/actions/mentors';
