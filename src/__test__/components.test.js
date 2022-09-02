@@ -8,7 +8,6 @@ import Mentors from '../components/Mentors';
 import Navbar from '../components/Navbar';
 
 describe('Testing if all components render correctly', () => {
-
   it('Testing Layout Component', () => {
     const tree = render(
       <Provider store={configureStore}>
@@ -39,5 +38,4 @@ describe('Testing if all components render correctly', () => {
     );
     expect(tree).toMatchSnapshot();
   });
-
 });

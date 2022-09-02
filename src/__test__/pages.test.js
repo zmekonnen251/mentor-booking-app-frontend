@@ -28,4 +28,3 @@ describe('Testing if all pages render correctly', () => {
     expect(tree).toMatchSnapshot();
   });
 });
-
