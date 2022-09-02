@@ -67,3 +67,25 @@
   width: 100%;
   display: inline-block;
 }
+
+@media screen and (max-width: 768px) {
+  .user_container {
+    flex-direction: column;
+  }
+
+  .user_form p {
+    display: none;
+  }
+
+  .user_details {
+    align-self: stretch;
+  }
+
+  .img_cont {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 60vw;
+    height: 60vw;
+  }
+}

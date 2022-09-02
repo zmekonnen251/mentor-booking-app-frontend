@@ -14,6 +14,7 @@ const initialState = {
   confirmEmail: '',
   password: '',
   confirmPassword: '',
+  avatar: '',
 };
 
 const UserAuth = (props) => {
@@ -22,7 +23,6 @@ const UserAuth = (props) => {
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(type);
   const [formData, setFormData] = useState(initialState);
-  const [userImg, setUserImg] = useState(null);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
@@ -60,7 +60,7 @@ const UserAuth = (props) => {
         data.append('user[name]', formData.name);
         data.append('user[email]', formData.email);
         data.append('user[password]', formData.password);
-        data.append('user[avatar]', userImg);
+        data.append('user[avatar]', formData.avatar);
 
         dispatch(signUpUser(data, navigate, setIsSignUp));
       } else {
@@ -76,13 +76,13 @@ const UserAuth = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     validateForm();
-    if (isSignUp) {
-      setUserImg(event.target.avatar.files[0]);
-    }
   };
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    if (event.target.name === 'avatar') {
+      setFormData({ ...formData, [event.target.name]: event.target.files[0] });
+    }
   };
 
   const switchMode = () => {

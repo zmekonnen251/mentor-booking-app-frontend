@@ -40,32 +40,15 @@ export default function Details() {
           </div>
           <div className={style.details}>
             <h2>{mentor.name}</h2>
-            <h2>{mentor.email}</h2>
-            <p>{mentor.email}</p>
-            <ul className={style.textdetails}>
-              <li>
-                <h5>ID:</h5>
-                <h5>{id}</h5>
-              </li>
-              <li>
-                <h5>Phone:</h5>
-                <h5>000-000-000</h5>
-              </li>
-              <li>
-                <h5>City:</h5>
-                <h5>Some city</h5>
-              </li>
-              <li>
-                <h5>Country:</h5>
-                <h5>Some country</h5>
-              </li>
+            <p>{mentor.bio}</p>
+            <div className={style.textdetails}>
               <ul className={style.tech}>
                 {mentor.technologies.map((tech) => (
                   <li key={tech}>{tech}</li>
                 ))}
               </ul>
-            </ul>
-            <form onSubmit={handleSubmit}>
+            </div>
+            <form onSubmit={handleSubmit} className={style.form}>
               <div className={style.wrapper}>
                 <input type="" name="country" placeholder="country" onChange={handleChange} />
                 <input type="text" name="city" placeholder="city" onChange={handleChange} />
@@ -81,10 +64,10 @@ export default function Details() {
               </button>
             </form>
             {!user && (
-              <>
+              <div className={style.logincontainer}>
                 <p>You must log in or signup first to reserve a mentor.</p>
                 <NavLink to="/auth/user" className={style.reserve}>Login</NavLink>
-              </>
+              </div>
             )}
 
           </div>

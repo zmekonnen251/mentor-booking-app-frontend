@@ -28,6 +28,7 @@
   color: white;
   padding: 10px 0;
   cursor: pointer;
+  z-index: 1000;
 }
 
 @media screen and (max-width: 768px) {
@@ -40,11 +41,13 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
+    background-color: white;
   }
 
   .content {
     position: relative;
-    padding-top: 30vh;
+    padding-top: 15vh;
     flex-grow: 1;
     height: 100%;
   }
@@ -53,5 +56,6 @@
     left: auto;
     right: 2rem;
     border-radius: 5px;
+    z-index: 3;
   }
 }
