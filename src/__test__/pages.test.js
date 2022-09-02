@@ -5,7 +5,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from '../redux/store';
 import Homepage from '../pages/Homepage';
 import MyReservations from '../pages/MyReservations';
-import Layout from '../layouts/Layout';
 
 describe('Testing if all pages render correctly', () => {
   it('Testing Homepage page', () => {

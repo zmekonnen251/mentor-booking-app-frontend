@@ -6,7 +6,6 @@ import configureStore from '../redux/store';
 import Layout from '../layouts/Layout';
 import Mentors from '../components/Mentors';
 import Navbar from '../components/Navbar';
-import PendingMentors from '../components/PendingMentors';
 
 describe('Testing if all components render correctly', () => {
 
