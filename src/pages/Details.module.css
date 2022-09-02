@@ -26,11 +26,16 @@
 }
 
 .details {
-  flex-basis: 30%;
+  width: 40vw;
+  flex-shrink: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.form {
+  align-self: stretch;
 }
 
 .textdetails {
@@ -89,6 +94,7 @@
 .wrapper {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   gap: 1rem;
@@ -145,7 +151,12 @@
     width: 100%;
   }
 
-  form {
+  .details {
+    align-self: center;
+    width: 80%;
+  }
+
+  .form {
     align-self: stretch;
   }
 

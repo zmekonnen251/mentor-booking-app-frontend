@@ -48,7 +48,7 @@ export default function Details() {
                 ))}
               </ul>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={style.form}>
               <div className={style.wrapper}>
                 <input type="" name="country" placeholder="country" onChange={handleChange} />
                 <input type="text" name="city" placeholder="city" onChange={handleChange} />
