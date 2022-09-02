@@ -47,7 +47,7 @@ export default function Navbar() {
       <Link to="/" className={style.logo} onClick={() => dispatch(toggler())}>
         BookAMentor
       </Link>
-      {user && <img src={user.avatar} alt={`${user.mentor_name}`} />}
+      {user && <img className={style.currentavatar} src={user.avatar} alt={`${user.mentor_name}`} />}
       <div className={style.menu}>
         {!user && <NavLink to="/auth/user/signin" onClick={() => dispatch(toggler())}>Log in</NavLink>}
         {!user && <NavLink to="/auth/mentor/signup" onClick={() => dispatch(toggler())}>Sign up</NavLink>}
