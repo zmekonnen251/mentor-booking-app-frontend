@@ -1,18 +1,17 @@
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaBars } from 'react-icons/fa';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import style from './Layout.module.css';
 import routes from '../routes';
+import toggler from '../redux/actions/toggle';
 
 export default function Layout() {
-  const [menu, setMenu] = useState(true);
-
-  const clickHandler = () => {
-    setMenu(!menu);
-  };
+  const dispatch = useDispatch();
+  const menu = useSelector((state) => state.toggle);
 
   return (
     <div className={style.layout_container}>
@@ -23,9 +22,7 @@ export default function Layout() {
             type="button"
             className={style.menutoggle}
             aria-label="Menu toggle"
-            onClick={() => {
-              clickHandler();
-            }}
+            onClick={() => dispatch(toggler())}
           >
             <FaBars />
           </button>

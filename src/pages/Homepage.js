@@ -4,7 +4,7 @@ import style from './Homepage.module.css';
 
 export default function Homepage() {
   const approvedMentors = useSelector((state) => state.mentors.approvedMentors);
-  const mentors = approvedMentors.filter((mentor) => mentor.role !== 'superadmin');
+  const mentors = approvedMentors?.filter((mentor) => mentor.role !== 'superadmin');
 
   return (
     <div className={style.homepage}>

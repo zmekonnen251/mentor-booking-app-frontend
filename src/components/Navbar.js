@@ -16,6 +16,7 @@ import {
 } from 'react-icons/fa';
 import style from './Navbar.module.css';
 import { signOutUser } from '../redux/actions/auth';
+import toggler from '../redux/actions/toggle';
 
 export default function Navbar() {
   const currentYear = new Date().getFullYear();
@@ -26,6 +27,7 @@ export default function Navbar() {
 
   const logOut = () => {
     dispatch(signOutUser(navigate, user.type, setUser));
+    dispatch(toggler());
   };
 
   useEffect(() => {
@@ -42,28 +44,28 @@ export default function Navbar() {
 
   return (
     <nav className={style.nav}>
-      <Link to="/" className={style.logo}>
+      <Link to="/" className={style.logo} onClick={() => dispatch(toggler())}>
         BookAMentor
       </Link>
       {user && <img src={user.avatar} alt={`${user.mentor_name}`} />}
       <div className={style.menu}>
-        {!user && <NavLink to="/auth/user/signin">Log in</NavLink>}
-        {!user && <NavLink to="/auth/mentor/signup">Sign up</NavLink>}
-        <NavLink to="/" active className={style.activelink}>
+        {!user && <NavLink to="/auth/user/signin" onClick={() => dispatch(toggler())}>Log in</NavLink>}
+        {!user && <NavLink to="/auth/mentor/signup" onClick={() => dispatch(toggler())}>Sign up</NavLink>}
+        <NavLink to="/" active className={style.activelink} onClick={() => dispatch(toggler())}>
           Home
         </NavLink>
         {user && (
           <>
-            <NavLink to="/profile">Profile</NavLink>
-            <NavLink to="/myreservations">My Reservations</NavLink>
-            <NavLink to="/reserve">Reserve</NavLink>
+            <NavLink to="/profile" onClick={() => dispatch(toggler())}>Profile</NavLink>
+            <NavLink to="/myreservations" onClick={() => dispatch(toggler())}>My Reservations</NavLink>
+            <NavLink to="/reserve" onClick={() => dispatch(toggler())}>Reserve</NavLink>
           </>
         ) }
 
         {(user?.role === 'admin' || user?.role === 'superadmin') && (
         <>
-          <NavLink to="pending-mentors">Pending Mentors</NavLink>
-          <NavLink to="approved-mentors">Mentors List</NavLink>
+          <NavLink to="pending-mentors" onClick={() => dispatch(toggler())}>Pending Mentors</NavLink>
+          <NavLink to="approved-mentors" onClick={() => dispatch(toggler())}>Mentors List</NavLink>
         </>
         )}
         {user && (
