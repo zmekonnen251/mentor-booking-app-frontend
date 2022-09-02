@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useState } from 'react';
 import { FaTicketAlt } from 'react-icons/fa';
 import { TailSpin } from 'react-loading-icons';
