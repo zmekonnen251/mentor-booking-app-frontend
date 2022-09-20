@@ -60,7 +60,7 @@ const UserAuth = (props) => {
         data.append('user[name]', formData.name);
         data.append('user[email]', formData.email);
         data.append('user[password]', formData.password);
-        data.append('user[avatar]', formData.avatar);
+        data.append('user[img_url]', formData.avatar);
 
         dispatch(signUpUser(data, navigate, setIsSignUp));
       } else {
@@ -156,7 +156,7 @@ const UserAuth = (props) => {
           )}
 
           <input
-            type="file"
+            type="text"
             name="avatar"
             placeholder="Image"
             onChange={handleChange}

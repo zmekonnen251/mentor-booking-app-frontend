@@ -62,7 +62,7 @@ const MentorAuth = (props) => {
         data.append('mentor[email]', formData.email);
         data.append('mentor[bio]', formData.bio);
         data.append('mentor[password]', formData.password);
-        data.append('mentor[avatar]', formData.avatar);
+        data.append('mentor[img_url]', formData.avatar);
 
         const technologies = formData.technologies.split(',');
         const mentor = {
@@ -165,7 +165,7 @@ const MentorAuth = (props) => {
           </span>
 
           <input
-            type="file"
+            type="text"
             name="avatar"
             placeholder="Image"
             onChange={handleChange}

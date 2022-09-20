@@ -21,7 +21,7 @@
 }
 
 .avatar {
-  border-radius: 20%;
+  border-radius: 50%;
   box-shadow:
     5px 5px 5px #bebebe,
     -5px -5px 5px #fff;
@@ -60,7 +60,7 @@
   background-color: rgba(150, 191, 15, 0.7);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 .nextbtn {
