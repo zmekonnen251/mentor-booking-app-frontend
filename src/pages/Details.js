@@ -66,7 +66,7 @@ export default function Details() {
             {!user && (
               <div className={style.logincontainer}>
                 <p>You must log in or signup first to reserve a mentor.</p>
-                <NavLink to="/auth/user" className={style.reserve}>Login</NavLink>
+                <NavLink to="/auth/signin" className={style.reserve}>Login</NavLink>
               </div>
             )}
 

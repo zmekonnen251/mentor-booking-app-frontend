@@ -47,18 +47,29 @@ export default function Navbar() {
       <Link to="/" className={style.logo} onClick={() => dispatch(toggler())}>
         BookAMentor
       </Link>
-      {user && <img className={style.currentavatar} src={user.avatar} alt={`${user.mentor_name}`} />}
+
+      {user && (
+      <Link to="/profile" onClick={() => dispatch(toggler())} className={style.avatarLink}>
+        <img className={style.currentAvatar} src={user.avatar} alt={`${user.mentor_name}`} />
+      </Link>
+      )}
       <div className={style.menu}>
-        {!user && <NavLink to="/auth/user/signin" onClick={() => dispatch(toggler())}>Log in</NavLink>}
-        {!user && <NavLink to="/auth/mentor/signup" onClick={() => dispatch(toggler())}>Sign up</NavLink>}
         <NavLink to="/" active className={style.activelink} onClick={() => dispatch(toggler())}>
           Home
         </NavLink>
+        {!user && (
+        <>
+          <NavLink to="/auth/signin" onClick={() => dispatch(toggler())}>Log in</NavLink>
+          <NavLink to="/auth/signup" onClick={() => dispatch(toggler())}>Sign up</NavLink>
+          <NavLink to="/mentor-request" onClick={() => dispatch(toggler())}>Be a mentor</NavLink>
+        </>
+        )}
         {user && (
           <>
             <NavLink to="/profile" onClick={() => dispatch(toggler())}>Profile</NavLink>
             <NavLink to="/myreservations" onClick={() => dispatch(toggler())}>My Reservations</NavLink>
             <NavLink to="/reserve" onClick={() => dispatch(toggler())}>Reserve</NavLink>
+
           </>
         ) }
 

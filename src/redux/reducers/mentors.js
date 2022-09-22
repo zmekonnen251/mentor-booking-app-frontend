@@ -4,15 +4,36 @@ import {
   APPROVE_MENTOR,
   BAN_MENTOR,
   REMOVE_MENTOR,
+  MENTOR_REQUEST,
+  LOADING,
 } from '../actionTypes';
 
-export default (state = [], action) => {
+const initialState = {
+  unapprovedMentors: [],
+  approvedMentors: [],
+  mentorRequest: null,
+  loading: false,
+  status: '',
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MENTORS:
       return {
         ...state,
         unapprovedMentors: action.payload.unapprovedMentors,
         approvedMentors: action.payload.approvedMentors,
+      };
+    case MENTOR_REQUEST:
+      return {
+        ...state,
+        loading: false,
+        status: 'ok',
+      };
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     case APPROVE_MENTOR:
       const approvedMentor = state.unapprovedMentors.find(

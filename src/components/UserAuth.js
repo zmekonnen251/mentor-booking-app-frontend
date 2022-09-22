@@ -158,7 +158,7 @@ const UserAuth = (props) => {
           <input
             type="text"
             name="avatar"
-            placeholder="Image"
+            placeholder="Image url"
             onChange={handleChange}
             className="auth__form__input"
             required
@@ -175,9 +175,9 @@ const UserAuth = (props) => {
 					  : "Don't have an account ? Sign Up"}
         </button>
 
-        <NavLink to="/auth/mentor/signin">
+        <NavLink to="/mentor-request">
           <button type="button" className="auth__mode">
-            Sign in as a mentor
+            Be a mentor
           </button>
         </NavLink>
       </form>

@@ -7,14 +7,16 @@
   padding: 20px 0;
   width: 270px;
 }
-
-.nav > img {
+.avatarLink{
+  text-align: center;
+}
+.currentAvatar {
   align-self: center;
   width: 70px;
   height: 70px;
   border: 1px groove gray;
   border-radius: 50%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .logo {

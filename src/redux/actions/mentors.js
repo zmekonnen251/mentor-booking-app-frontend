@@ -3,12 +3,16 @@ import {
   APPROVE_MENTOR,
   REMOVE_MENTOR,
   BAN_MENTOR,
+  MENTOR_REQUEST,
+  LOADING,
 } from '../actionTypes';
 import {
   fetchMentorsApi,
   approveMentorApi,
   banMentorApi,
   removeMentorApi,
+  addSpecializationApi,
+  mentorRequestApi,
 } from '../api';
 
 export const fetchMentors = () => async (dispatch) => {
@@ -24,6 +28,31 @@ export const fetchMentors = () => async (dispatch) => {
   } catch (error) {
     // console.log(error);
   }
+};
+
+export const mentorRequest =(mentor) => async (dispatch) => {
+	  try {
+	    const res = await mentorRequestApi(mentor.mentorData);
+	    if (res.status === 201) {
+	      const id = res.data.mentor_id;
+	      const { technologies } = mentor;
+	      const data = { technologies, mentor_id: id };
+	      await addSpecializationApi(data);
+	      dispatch({
+	        type: MENTOR_REQUEST,
+	        payload: res.status,
+	      });
+	      // navigate('/auth/mentor/signin');
+	    }
+	  } catch (error) {
+	    // console.log(error);
+	  }
+};
+
+export const mentorRequestLoading = () => (dispatch) => {
+  dispatch({
+    type: LOADING,
+  });
 };
 
 export const approveMentor = (mentorId) => async (dispatch) => {
