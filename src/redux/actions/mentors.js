@@ -1,3 +1,5 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable no-tabs */
 import {
   FETCH_MENTORS,
   APPROVE_MENTOR,
@@ -30,7 +32,7 @@ export const fetchMentors = () => async (dispatch) => {
   }
 };
 
-export const mentorRequest =(mentor) => async (dispatch) => {
+export const mentorRequest = (mentor) => async (dispatch) => {
 	  try {
 	    const res = await mentorRequestApi(mentor.mentorData);
 	    if (res.status === 201) {

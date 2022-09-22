@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-tabs */
 /* eslint-disable no-mixed-spaces-and-tabs */
@@ -15,7 +16,7 @@ const MentorRequest = () => {
   return (
     <>
       {!loading && status === 'ok'
-        ? <p className='success-message'>Your request sent successfully!</p>
+        ? <p className="success-message">Your request sent successfully!</p>
         : (loading && status === '')
           ? <LoadingSpinner /> : <MentorRequestForm />}
     </>

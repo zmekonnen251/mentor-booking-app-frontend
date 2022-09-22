@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import Homepage from './pages/Homepage';
 import Reserve from './pages/Reserve';
 import UserAuth from './components/UserAuth';

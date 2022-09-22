@@ -3,8 +3,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React, { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { mentorRequest,mentorRequestLoading } from '../redux/actions/mentors';
+import { useDispatch } from 'react-redux';
+import { mentorRequest, mentorRequestLoading } from '../redux/actions/mentors';
 
 import './auth.css';
 
@@ -12,7 +12,6 @@ const initialState = {
   name: '',
   email: '',
   password: '',
-  confirmPassword: '',
   img_url: '',
   technologies: '',
   bio: '',
@@ -53,10 +52,6 @@ const MentorRequestForm = () => {
       };
       dispatch(mentorRequestLoading());
       dispatch(mentorRequest(mentor, navigate));
-
-      // rotating
-      // const status = useSelector(state => state.mentors.status);
-      // if(status===200) navigate(/success);
     }
   };
 
@@ -142,5 +137,4 @@ const MentorRequestForm = () => {
   );
 };
 
-
-export default MentorRequestForm
+export default MentorRequestForm;
