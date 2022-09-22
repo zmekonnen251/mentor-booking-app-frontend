@@ -1,7 +1,7 @@
 import Homepage from './pages/Homepage';
 import Reserve from './pages/Reserve';
 import UserAuth from './components/UserAuth';
-import MentorAuth from './components/MentorAuth';
+import MentorRequest from './components/MentorRequest';
 import Details from './pages/Details';
 import MyReservations from './pages/MyReservations';
 import Profile from './pages/Profile';
@@ -22,28 +22,22 @@ const routes = [
     element: <MyReservations />,
   },
   {
-    path: '/auth/user/signup',
+    path: '/auth/signup',
     title: 'UserAuth',
     exact: true,
     element: <UserAuth type />,
   },
   {
-    path: '/auth/user/signin',
+    path: '/auth/signin',
     title: 'UserAuth',
     exact: true,
     element: <UserAuth type={false} />,
   },
   {
-    path: '/auth/mentor/signup',
-    title: 'MentorAuth',
+    path: '/mentor-request',
+    title: 'MentorRequest',
     exact: true,
-    element: <MentorAuth type />,
-  },
-  {
-    path: '/auth/mentor/signin',
-    title: 'MentorAuth',
-    exact: true,
-    element: <MentorAuth type={false} />,
+    element: <MentorRequest />,
   },
   {
     path: '/mentor/:id',

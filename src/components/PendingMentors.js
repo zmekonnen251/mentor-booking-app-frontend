@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { useDispatch, useSelector } from 'react-redux';
-import { approveMentor } from '../redux/actions/mentors';
+import { approveMentor, removeMentor } from '../redux/actions/mentors';
 import styles from './PendingMentors.module.css';
 
 const PendingMentors = () => {
@@ -38,10 +38,16 @@ const PendingMentors = () => {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-success"
                     onClick={() => dispatch(approveMentor(mentor.id))}
                   >
                     Approve
+                  </button>
+                  <button
+                    type="button"
+                    className={styles.decline}
+                    onClick={() => dispatch(removeMentor(mentor.id))}
+                  >
+                    Decline
                   </button>
                 </td>
               </tr>

@@ -60,7 +60,7 @@ const UserAuth = (props) => {
         data.append('user[name]', formData.name);
         data.append('user[email]', formData.email);
         data.append('user[password]', formData.password);
-        data.append('user[avatar]', formData.avatar);
+        data.append('user[img_url]', formData.avatar);
 
         dispatch(signUpUser(data, navigate, setIsSignUp));
       } else {
@@ -156,9 +156,9 @@ const UserAuth = (props) => {
           )}
 
           <input
-            type="file"
+            type="text"
             name="avatar"
-            placeholder="Image"
+            placeholder="Image url"
             onChange={handleChange}
             className="auth__form__input"
             required
@@ -175,9 +175,9 @@ const UserAuth = (props) => {
 					  : "Don't have an account ? Sign Up"}
         </button>
 
-        <NavLink to="/auth/mentor/signin">
+        <NavLink to="/mentor-request">
           <button type="button" className="auth__mode">
-            Sign in as a mentor
+            Be a mentor
           </button>
         </NavLink>
       </form>
