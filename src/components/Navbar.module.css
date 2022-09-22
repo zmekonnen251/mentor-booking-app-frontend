@@ -7,15 +7,18 @@
   padding: 20px 0;
   width: 270px;
 }
-.avatarLink{
+
+.avatarLink {
   text-align: center;
 }
+
 .currentAvatar {
   align-self: center;
   width: 70px;
   height: 70px;
   border: 1px groove gray;
   border-radius: 50%;
+
   /* text-align: center; */
 }
 

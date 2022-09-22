@@ -40,10 +40,10 @@
   margin-bottom: 1rem;
 }
 
-.specialization{
+.specialization {
   font-size: 0.8rem;
   font-style: italic;
-  color: rgb(55, 55, 55)
+  color: rgb(55, 55, 55);
 }
 
 .auth__form__button {
@@ -65,7 +65,7 @@
   cursor: pointer;
 }
 
-.success-message{
+.success-message {
   text-align: center;
   margin-top: 6rem;
   font-size: 2.5rem;
