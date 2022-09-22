@@ -17,7 +17,7 @@ export const signUpUser =	(userData, navigate, setIsSignUp) => async (dispatch) 
 	        payload: res.data,
 	      });
 	      setIsSignUp(false);
-	      navigate('/auth/user/signin');
+	      navigate('/auth/signin');
 	    }
 	  } catch (error) {
 	    // console.log(error);
