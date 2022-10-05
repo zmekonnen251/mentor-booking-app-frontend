@@ -62,10 +62,6 @@ const MentorRequestForm = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-
-    if (event.target.name === 'avatar') {
-      setFormData({ ...formData, [event.target.name]: event.target.files[0] });
-    }
   };
 
   return (
@@ -117,7 +113,7 @@ const MentorRequestForm = () => {
 
         <input
           type="text"
-          name="avatar"
+          name="img_url"
           placeholder="Image url"
           onChange={handleChange}
           className="auth__form__input"
