@@ -16,7 +16,7 @@ API.interceptors.request.use((req) => {
 export const signUpUserApi = (data) => API.post('users', data);
 export const signInUserApi = (data) => API.post('users/sign_in', data);
 export const signOutUserApi = () => API.delete('users/sign_out');
-export const mentorRequestApi = (data) => API.post('mentors-request', data);
+export const mentorRequestApi = (data) => API.post('mentor-request', data);
 export const addSpecializationApi = (data) => API.post('technologies', data);
 
 export const fetchMentorsApi = () => API.get('/mentors/list');

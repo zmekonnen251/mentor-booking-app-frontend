@@ -10,7 +10,6 @@ export default (state = [], action) => {
       const updatedState = [
         ...state, action.payload.newBooking,
       ];
-      action.payload.navigate('/myreservations');
       return updatedState;
     case CANCEL_RESERVE_MENTOR:
       return [

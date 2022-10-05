@@ -57,6 +57,7 @@ function Reserve() {
               <input type="text" name="city" placeholder="city" onChange={handleChange} />
 
               <select name="mentor_id" onChange={handleChange}>
+                <option defaultValue>Mentors</option>
                 {mentors.map((mentor) => (
                   <option key={mentor.id} value={mentor.id}>{mentor.name}</option>
                 ))}

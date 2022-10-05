@@ -7,8 +7,9 @@ export const reserveMentor = (data, navigate) => async (dispatch) => {
     if (res.status === 200) {
       dispatch({
         type: RESERVE_MENTOR,
-        payload: { newBooking: res.data, navigate },
+        payload: { newBooking: res.data},
       });
+      navigate("/myreservations");
     }
   } catch (error) {
     // console.log(error);
