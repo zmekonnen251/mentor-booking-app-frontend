@@ -77,6 +77,7 @@ export default function Navbar() {
         <>
           <NavLink to="pending-mentors" onClick={() => dispatch(toggler())}>Pending Mentors</NavLink>
           <NavLink to="approved-mentors" onClick={() => dispatch(toggler())}>Mentors List</NavLink>
+          <NavLink to="/mentor-request" onClick={() => dispatch(toggler())}>Add Mentor</NavLink>
         </>
         )}
         {user && (
