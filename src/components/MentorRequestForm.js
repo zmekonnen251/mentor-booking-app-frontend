@@ -42,7 +42,7 @@ const MentorRequestForm = () => {
       data.append('mentor[name]', formData.name);
       data.append('mentor[email]', formData.email);
       data.append('mentor[bio]', formData.bio);
-      data.append('mentor[img_url]', formData.avatar);
+      data.append('mentor[img_url]', formData.img_url);
       data.append('mentor[phone]', formData.phone);
 
       const technologies = formData.technologies.split(',');
