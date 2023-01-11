@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://mentorbooking.herokuapp.com/',
+  baseURL: 'https://mentor-booking-api.fly.dev/',
 });
 
 API.interceptors.request.use((req) => {

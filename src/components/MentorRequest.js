@@ -16,7 +16,9 @@ const MentorRequest = () => {
   return (
     <>
       {!loading && status === 'ok'
-        ? <p className="success-message">Your request sent successfully!</p>
+        ? setTimeout(() => {
+          <p className="success-message">Your request sent successfully!</p>
+        }, 1000)
         : (loading && status === '')
           ? <LoadingSpinner /> : <MentorRequestForm />}
     </>
