@@ -1,0 +1,493 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing if all pages render correctly Testing Homepage page 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="homepage"
+      >
+        <div
+          class="pagetitle"
+        >
+          <h1
+            class="maintitle"
+          >
+            Our Mentors
+          </h1>
+          <p>
+            Please select a mentor
+          </p>
+        </div>
+        <ul
+          class="mentors"
+        >
+          <svg
+            class="icon-loading"
+            height="38"
+            viewBox="0 0 38 38"
+            width="38"
+          >
+            <defs>
+              <lineargradient
+                id="prefix__a"
+                x1="8.042%"
+                x2="65.682%"
+                y1="0%"
+                y2="23.865%"
+              >
+                <stop
+                  offset="0%"
+                  stop-opacity="0"
+                />
+                <stop
+                  offset="63.146%"
+                  stop-opacity="0.631"
+                />
+                <stop
+                  offset="100%"
+                />
+              </lineargradient>
+            </defs>
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              transform="translate(1 1)"
+            >
+              <path
+                d="M36 18c0-9.94-8.06-18-18-18"
+                stroke="#97bf0f"
+                stroke-width="3"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="0.9s"
+                  from="0 18 18"
+                  repeatCount="indefinite"
+                  to="360 18 18"
+                  type="rotate"
+                />
+              </path>
+              <circle
+                cx="36"
+                cy="18"
+                r="1"
+              >
+                <animatetransform
+                  attributeName="transform"
+                  dur="0.9s"
+                  from="0 18 18"
+                  repeatCount="indefinite"
+                  to="360 18 18"
+                  type="rotate"
+                />
+              </circle>
+            </g>
+          </svg>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="homepage"
+    >
+      <div
+        class="pagetitle"
+      >
+        <h1
+          class="maintitle"
+        >
+          Our Mentors
+        </h1>
+        <p>
+          Please select a mentor
+        </p>
+      </div>
+      <ul
+        class="mentors"
+      >
+        <svg
+          class="icon-loading"
+          height="38"
+          viewBox="0 0 38 38"
+          width="38"
+        >
+          <defs>
+            <lineargradient
+              id="prefix__a"
+              x1="8.042%"
+              x2="65.682%"
+              y1="0%"
+              y2="23.865%"
+            >
+              <stop
+                offset="0%"
+                stop-opacity="0"
+              />
+              <stop
+                offset="63.146%"
+                stop-opacity="0.631"
+              />
+              <stop
+                offset="100%"
+              />
+            </lineargradient>
+          </defs>
+          <g
+            fill="none"
+            fill-rule="evenodd"
+            transform="translate(1 1)"
+          >
+            <path
+              d="M36 18c0-9.94-8.06-18-18-18"
+              stroke="#97bf0f"
+              stroke-width="3"
+            >
+              <animatetransform
+                attributeName="transform"
+                dur="0.9s"
+                from="0 18 18"
+                repeatCount="indefinite"
+                to="360 18 18"
+                type="rotate"
+              />
+            </path>
+            <circle
+              cx="36"
+              cy="18"
+              r="1"
+            >
+              <animatetransform
+                attributeName="transform"
+                dur="0.9s"
+                from="0 18 18"
+                repeatCount="indefinite"
+                to="360 18 18"
+                type="rotate"
+              />
+            </circle>
+          </g>
+        </svg>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Testing if all pages render correctly Testing MyReservations page 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="myreservations"
+      >
+        <div
+          class="pagetitle"
+        >
+          <h1
+            class="maintitle"
+          >
+            My Reservations
+          </h1>
+          <p>
+            List of All reserved sessions with reservations
+          </p>
+        </div>
+        <div
+          class="mentorstable"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Mentors
+                </th>
+                <th
+                  class="datecolumn"
+                >
+                  Scheduled Date
+                </th>
+                <th>
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <svg
+                class="icon-loading"
+                height="38"
+                viewBox="0 0 38 38"
+                width="38"
+              >
+                <defs>
+                  <lineargradient
+                    id="prefix__a"
+                    x1="8.042%"
+                    x2="65.682%"
+                    y1="0%"
+                    y2="23.865%"
+                  >
+                    <stop
+                      offset="0%"
+                      stop-opacity="0"
+                    />
+                    <stop
+                      offset="63.146%"
+                      stop-opacity="0.631"
+                    />
+                    <stop
+                      offset="100%"
+                    />
+                  </lineargradient>
+                </defs>
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  transform="translate(1 1)"
+                >
+                  <path
+                    d="M36 18c0-9.94-8.06-18-18-18"
+                    stroke="#fff"
+                    stroke-width="2"
+                  >
+                    <animatetransform
+                      attributeName="transform"
+                      dur="0.9s"
+                      from="0 18 18"
+                      repeatCount="indefinite"
+                      to="360 18 18"
+                      type="rotate"
+                    />
+                  </path>
+                  <circle
+                    cx="36"
+                    cy="18"
+                    r="1"
+                  >
+                    <animatetransform
+                      attributeName="transform"
+                      dur="0.9s"
+                      from="0 18 18"
+                      repeatCount="indefinite"
+                      to="360 18 18"
+                      type="rotate"
+                    />
+                  </circle>
+                </g>
+              </svg>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="myreservations"
+    >
+      <div
+        class="pagetitle"
+      >
+        <h1
+          class="maintitle"
+        >
+          My Reservations
+        </h1>
+        <p>
+          List of All reserved sessions with reservations
+        </p>
+      </div>
+      <div
+        class="mentorstable"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Mentors
+              </th>
+              <th
+                class="datecolumn"
+              >
+                Scheduled Date
+              </th>
+              <th>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <svg
+              class="icon-loading"
+              height="38"
+              viewBox="0 0 38 38"
+              width="38"
+            >
+              <defs>
+                <lineargradient
+                  id="prefix__a"
+                  x1="8.042%"
+                  x2="65.682%"
+                  y1="0%"
+                  y2="23.865%"
+                >
+                  <stop
+                    offset="0%"
+                    stop-opacity="0"
+                  />
+                  <stop
+                    offset="63.146%"
+                    stop-opacity="0.631"
+                  />
+                  <stop
+                    offset="100%"
+                  />
+                </lineargradient>
+              </defs>
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                transform="translate(1 1)"
+              >
+                <path
+                  d="M36 18c0-9.94-8.06-18-18-18"
+                  stroke="#fff"
+                  stroke-width="2"
+                >
+                  <animatetransform
+                    attributeName="transform"
+                    dur="0.9s"
+                    from="0 18 18"
+                    repeatCount="indefinite"
+                    to="360 18 18"
+                    type="rotate"
+                  />
+                </path>
+                <circle
+                  cx="36"
+                  cy="18"
+                  r="1"
+                >
+                  <animatetransform
+                    attributeName="transform"
+                    dur="0.9s"
+                    from="0 18 18"
+                    repeatCount="indefinite"
+                    to="360 18 18"
+                    type="rotate"
+                  />
+                </circle>
+              </g>
+            </svg>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
